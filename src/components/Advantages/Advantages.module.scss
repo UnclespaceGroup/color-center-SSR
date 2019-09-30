@@ -1,0 +1,47 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper {
+  width: 30%;
+
+  &:not(:nth-child(3n)) {
+    margin-right: 5%;
+  }
+
+  &:nth-child(n+4) {
+    margin-top: 10rem;
+  }
+}
+
+.icon {
+  width: 10rem;
+  height: 10rem;
+  background: no-repeat center;
+  background-size: contain;
+}
+
+.title {
+  font-weight: 300;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  color: #000000;
+  margin-bottom: 2.1rem;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 20rem;
+    border-top: 2px solid #E30000;
+    margin: 2rem 0;
+  }
+}
+
+.text {
+  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  color: #434343;
+}

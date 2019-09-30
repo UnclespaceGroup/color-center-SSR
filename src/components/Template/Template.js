@@ -1,14 +1,10 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import css from './Template.module.scss'
 
-const Template = ({ children }) => (
+const Template = () => (
   <div className={css.container}>
-    {children}
+    ф
   </div>
 )
-Template.propTypes = {
-  children: PropTypes.node
-}
 
 export default React.memo(Template)

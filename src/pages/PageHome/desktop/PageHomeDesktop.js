@@ -1,14 +1,15 @@
-// packages
 import React from 'react'
-// components
 import s from './pageHomeDesktop.module.scss'
-import Layout from 'components/Layout/Layout'
+import MainBanner from '../../../components/MainBanner/MainBanner'
+import Advantages from '../../../components/Advantages/Advantages'
+import Padding from '../../../components/Padding/Padding'
 
 const PageHomeDesktop = () => (
   <div className={s.container}>
-    <Layout >
-      dsmlmlkdc
-    </Layout>
+    <MainBanner />
+    <Padding value={120} />
+    <Advantages />
+    <Padding value={120} />
   </div>
 )
 
