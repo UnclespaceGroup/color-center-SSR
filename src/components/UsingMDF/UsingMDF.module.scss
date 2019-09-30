@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.title {
+  font-weight: 300;
+  font-size: 4.8rem;
+  line-height: 5.6rem;
+  color: #FFFFFF;
+  text-shadow: 0px 1px 10px #000000;
+  margin-bottom: 2.4rem;
+}
+
+.text {
+  font-size: 1.8rem;
+  line-height: 2.7rem;
+  color: #E5E5E5;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item_0 {
+  width: 55.3%;
+  height: 46rem;
+  margin-right: 0.7%;
+  padding: 12rem 10rem 10rem;
+}
+.item_1 {
+  width: 43%;
+  height: 46rem;
+  padding: 12rem 8rem 10rem;
+  background-position: right ;
+}
+.item_2 {
+  margin-top: 1rem;
+  height: 60rem;
+  width: 24.3%;
+  margin-right: 0.7%;
+  padding: 20rem 5rem 10rem;
+}
+.item_3 {
+  margin-top: 1rem;
+  height: 60rem;
+  width: 74%;
+  padding: 25rem 15rem 10rem;
+}
