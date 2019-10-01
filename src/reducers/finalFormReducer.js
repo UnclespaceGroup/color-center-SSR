@@ -1,4 +1,4 @@
-import { UPDATE_FORM_STATE } from 'constants/redux/FINALFORM'
+import { UPDATE_FORM_STATE } from '../constants/FORM_DATA'
 
 export default function FinalFormReducer (state = {}, action = {}) {
   switch (action.type) {

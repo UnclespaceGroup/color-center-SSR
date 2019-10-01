@@ -6,15 +6,24 @@ import FieldInput from '../FieldInput/FieldInput'
 import Padding from '../Padding/Padding'
 import { Field } from 'react-final-form'
 import cn from 'classnames'
-import { MdArrowForward } from 'react-icons/md'
+import { MdArrowForward, MdArrowBack } from 'react-icons/md'
 import FieldSelect from '../FieldSelect/FieldSelect'
 import FieldRange from '../FieldRange/FieldRange'
 import Button from '../Button/Button'
+import {
+  FIELD_COLOR_CODE,
+  FIELD_COLOR_SHADE,
+  FIELD_COUNT,
+  FIELD_LENGTH, FIELD_SIZE,
+  FIELD_THICKNESS,
+  FIELD_WIDTH
+} from '../../constants/FORM_DATA'
 
-const OrderForm = ({ data }) => {
+const OrderForm = ({ onSubmit }) => {
   const [currentForm, setCurrentForm] = useState(0)
   const nextForm = () => { setCurrentForm(currentForm + 1) }
   const prevForm = () => { setCurrentForm(currentForm - 1) }
+  const startPosForm = () => { setCurrentForm(0) }
   return (
     <>
       <Layout>
@@ -41,7 +50,7 @@ const OrderForm = ({ data }) => {
                     value: '3'
                   }
                 ]}
-                name={'selectTypeColor'}
+                name={FIELD_COLOR_SHADE}
                 label={'Оттенок панели'}
                 text={''}
               />
@@ -66,7 +75,7 @@ const OrderForm = ({ data }) => {
                     value: '#00FF00'
                   }
                 ]}
-                name={'selectColor'}
+                name={FIELD_COLOR_CODE}
                 label={'Цвет панели'}
                 text={''}
               />
@@ -76,31 +85,35 @@ const OrderForm = ({ data }) => {
               <Field
                 type={'number'}
                 component={FieldInput}
-                name={'tolshina'}
+                name={FIELD_THICKNESS}
                 label={'Толщина панели'}
                 text={''}
                 caption={'Милиметры'}
               />
               <Field
                 type={'text'}
+                name={FIELD_SIZE}
                 component={FieldRange}
                 onChange={(val, prevVal) => console.log(val, prevVal)}
-                name={'sizes'}
+                names={[FIELD_LENGTH, FIELD_WIDTH]}
                 label={'Размеры панели'}
                 text={'Обязательно к заполнению'}
               />
             </FormBlock>
-            <FormBlock step={3} disable={currentForm !== 2} prevStep={prevForm} nextStep={nextForm}>
+            <FormBlock step={3} disable={currentForm !== 2} prevStep={prevForm} nextStep={prevForm}>
               <Field
                 type={'number'}
                 component={FieldInput}
-                name={'tolshina'}
+                name={FIELD_COUNT}
                 label={'Количество'}
                 text={''}
                 caption={'штук'}
               />
-              <Button className={css.btn} color={'purple'}>Сделать заказ</Button>
-              <Button className={css.btn} classname={'inline__purple'} onClick={() => setCurrentForm(0)}>В начало</Button>
+              <Button className={css.btn} color={'purple'} onClick={() => {
+                startPosForm()
+                onSubmit()
+              }} >Сделать заказ</Button>
+              <Button className={css.btn} classname={'inline__purple'} onClick={startPosForm}>В начало</Button>
             </FormBlock>
           </div>
         </Layout>
@@ -114,7 +127,11 @@ const FormBlock = ({ children, disable, step, nextStep, prevStep }) => (
     {children}
     <div className={css.step}>
       <div onClick={prevStep}>Шаг {step} / 3</div>
-      {<Button className={disable ? css.next__opacity : css.next} color={'purple'} onClick={nextStep}>Далее<MdArrowForward /></Button>}
+      {
+        step !== 3
+          ? <Button className={disable ? css.next__opacity : css.next} color={'purple'} onClick={nextStep}>Далее<MdArrowForward /></Button>
+          : <Button leftIcon className={disable ? css.next__opacity : css.next} color={'inline__purple'} onClick={nextStep}><MdArrowBack />Назад</Button>
+      }
     </div>
   </div>
 )
