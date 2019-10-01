@@ -25,28 +25,31 @@
   justify-content: space-between;
 }
 
+$height: 31vw;
+$height2: 35vw;
+
 .item_0 {
   width: 55.3%;
-  height: 46rem;
+  height: $height;
   margin-right: 0.7%;
   padding: 12rem 10rem 10rem;
 }
 .item_1 {
   width: 43%;
-  height: 46rem;
+  height: $height;
   padding: 12rem 8rem 10rem;
   background-position: right ;
 }
 .item_2 {
   margin-top: 1rem;
-  height: 60rem;
+  height: $height2;
   width: 24.3%;
   margin-right: 0.7%;
   padding: 20rem 5rem 10rem;
 }
 .item_3 {
   margin-top: 1rem;
-  height: 60rem;
+  height: $height2;
   width: 74%;
   padding: 25rem 15rem 10rem;
 }

@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 4.8rem;
+  line-height: 5.6rem;
+  color: #000000;
+  margin-bottom: 3.7rem;
+}
+
+.text {
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  color: #000000;
+}
+
+.img {
+  width: 52rem;
+  height: 50rem;
+  background: url("../../static/colors.png") no-repeat center;
+  background-size: cover;
+}
