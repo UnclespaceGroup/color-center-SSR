@@ -10,13 +10,15 @@ import BlockColors from '../../../components/BlockColors/BlockColorsMobile'
 import car from '../../../static/car.jpg'
 import Bg from '../../../components/Bg/Bg'
 import Footer from '../../../components/Footer/FooterMobile'
+import Header from '../../../components/Header/HeaderMobile'
 
 const PageHomeMobile = () => (
   <div className={css.container}>
+    <Header />
     <MainBannerMobile />
     <Padding value={60} />
     <AdvantagesMobile />
-    <Padding value={60} />
+    <Padding value={120} />
     <UsingMDFMobile />
     <Padding value={60} />
     <BannerMobile title={'Гарантия качества'} text={'Покраска производятся в специально оборудованном помещении в строгом соблюдении технологий'} icon={iconGalka} />

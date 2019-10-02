@@ -13,9 +13,9 @@ const Footer = () => (
           <p>Центр Цвета, Сыктывкар</p>
           <p style={{ marginTop: '2rem', marginBottom: '6rem' }}>Круглосуточно, без выходных</p>
           <div className={css.socials}>
-            <a href={'tel:891286353333'} className={css.viber} />
-            <a href={'tel:891286353333'} className={css.wa} />
-            <a href={'tel:891286353333'} className={css.vk} />
+            <a href={`tel${MAIN_PHONE}`} className={css.viber} />
+            <a href={`tel${MAIN_PHONE}`} className={css.wa} />
+            <a href={`tel${MAIN_PHONE}`} className={css.vk} />
           </div>
         </div>
         <div className={css.hr} />

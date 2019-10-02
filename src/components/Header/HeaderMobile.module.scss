@@ -1,0 +1,70 @@
+.container {
+  width: 100vw;
+  position: fixed;
+  z-index: 100;
+  background: rgba(255,255,255,0.9);
+}
+
+.logo {
+  width: 12rem;
+  height: 3rem;
+  background: url("../../static/svg/logo.svg") no-repeat center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.header {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .phone {
+    margin-top: 0;
+    font-size: 1.8rem;
+
+    &:before {
+      margin-right: .3rem;
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+  }
+}
+
+.burger {
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+.wrapper {
+  border-top: solid 1px dimgrey;
+  padding: 3rem 2rem;
+}
+
+.item {
+  cursor: pointer;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  color: #000000;
+  margin-bottom: 2rem;
+}
+
+.phone {
+  margin-top: 5rem;
+  display: block;
+  font-size: 3.6rem;
+  line-height: 4.2rem;
+  color: #E30000;
+
+  &:before {
+    content: '';
+    width: 3.2rem;
+    height: 3.2rem;
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: -0.5rem;
+    background: url("../../static/svg/phone.svg") no-repeat center;
+    background-size: contain;
+  }
+}
