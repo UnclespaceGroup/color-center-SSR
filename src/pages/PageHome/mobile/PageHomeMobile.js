@@ -4,6 +4,9 @@ import MainBannerMobile from '../../../components/MainBanner/MainBannerMobile'
 import Padding from '../../../components/Padding/Padding'
 import AdvantagesMobile from '../../../components/Advantages/AdvantagesMobile'
 import UsingMDFMobile from '../../../components/UsingMDF/UsingMDFMobile'
+import iconGalka from '../../../static/svg/check-24px-white.svg'
+import BannerMobile from '../../../components/Banner/BannerMobile'
+import BlockColors from '../../../components/BlockColors/BlockColorsMobile'
 
 const PageHomeMobile = () => (
   <div className={css.container}>
@@ -12,6 +15,11 @@ const PageHomeMobile = () => (
     <AdvantagesMobile />
     <Padding value={60} />
     <UsingMDFMobile />
+    <Padding value={60} />
+    <BannerMobile title={'Гарантия качества'} text={'Покраска производятся в специально оборудованном помещении в строгом соблюдении технологий'} icon={iconGalka} />
+    <Padding value={60} />
+    <BlockColors />
+    <Padding value={60} />
     <Padding value={120} />
   </div>
 )
