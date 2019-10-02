@@ -1,5 +1,5 @@
 import React from 'react'
-import css from './MainBanner.module.scss'
+import css from './MainBannerMobile.module.scss'
 import Bg from '../Bg/Bg'
 import im from 'static/katalog.jpg'
 

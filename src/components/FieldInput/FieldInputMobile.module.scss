@@ -1,0 +1,58 @@
+.container {
+  position: relative;
+  width: 28rem;
+
+  label {
+    font-size: 1.6rem;
+    line-height: 3.5rem;
+    color: #727272;
+  }
+
+  input {
+    font-size: 2.2rem;
+    line-height: 2.4rem;
+    color: #4F4F4F;
+    width: 100%;
+    background: #F2F2F2;
+    border-radius: .8rem .8rem 0 0;
+    padding: 2rem 1.6rem 0.8rem;
+  }
+}
+
+.line {
+  border-top: solid 3px #9B51E0;
+  transition: all 200ms ease-in;
+
+  &__error {
+    composes: line;
+    border-color: red;
+  }
+
+  &__success {
+    composes: line;
+    border-color: darkgreen;
+  }
+}
+
+.text {
+  margin-top: .5rem;
+  margin-left: 1.5rem;
+  font-size: 1.3rem;
+  line-height: 1.6rem;
+  color: #727272;
+}
+
+.caption {
+  position: absolute;
+  right: 1rem;
+  top: 5.5rem;
+  font-size: 1.6rem;
+  line-height: 3.5rem;
+  color: #727272;
+}
+
+.errors {
+  composes: text;
+  height: 1rem;
+  color: red;
+}

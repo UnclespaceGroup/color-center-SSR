@@ -10,7 +10,7 @@ const params = {
   centeredSlides: true,
   loop: true,
   slideClass: css.wrapper,
-  spaceBetween: 60
+  spaceBetween: 30
 }
 
 const AdvantagesMobile = () => {

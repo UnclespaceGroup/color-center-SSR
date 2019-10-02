@@ -1,8 +1,12 @@
 import React from 'react'
 import cn from 'classnames'
-import css from './FieldInput.module.scss'
+import cssDesktop from './FieldInput.module.scss'
+import cssMobile from './FieldInputMobile.module.scss'
+import { useSelector } from 'react-redux'
 
 const FieldInput = ({ input, label, text, value, caption, meta, ...props }) => {
+  const isDesktop = useSelector(state => state.toJS().IsDesktop)
+  const css = isDesktop ? cssDesktop : cssMobile
   const error = (meta.touched && meta.error) ? meta.error : null
   const success = !meta.pristine && !meta.error
   return (

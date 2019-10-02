@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import css from './OrderForm.module.scss'
-import Layout from '../Layout/Layout'
+import cssDesktop from './OrderForm.module.scss'
+import cssMobile from './OrderFormMobile.module.scss'
+import LayoutDesktop from '../Layout/Layout'
+import LayoutMobile from '../Layout/LayoutMobile'
 import FieldInput from '../FieldInput/FieldInput'
 import Padding from '../Padding/Padding'
 import { Field } from 'react-final-form'
@@ -19,15 +21,18 @@ import {
   FIELD_WIDTH
 } from '../../constants/FORM_DATA'
 import { required, requiredRange } from '../../utils/validators'
+import { useSelector } from 'react-redux'
 
 const OrderForm = ({ onSubmit, errors, hasValidationErrors }) => {
+  const isDesktop = useSelector(state => state.toJS().IsDesktop)
+  const css = isDesktop ? cssDesktop : cssMobile
+  const Layout = isDesktop ? LayoutDesktop : LayoutMobile
   const [currentForm, setCurrentForm] = useState(0)
   const nextForm = () => { setCurrentForm(currentForm + 1) }
   const prevForm = () => { setCurrentForm(currentForm - 1) }
   const startPosForm = () => { setCurrentForm(0) }
-  console.log(hasValidationErrors)
   return (
-    <>
+    <div className={css.wrapper}>
       <Layout>
         <h2>Форма заказа</h2>
       </Layout>
@@ -36,7 +41,7 @@ const OrderForm = ({ onSubmit, errors, hasValidationErrors }) => {
           <Padding value={40} />
           <div className={css.form}>
             <FormBlock step={1} disable={currentForm !== 0} prevStep={prevForm} nextStep={nextForm}
-              buttonDisabled={!!errors[FIELD_COLOR_SHADE] || !!errors[FIELD_COLOR_CODE]}
+              buttonDisabled={!!errors[FIELD_COLOR_SHADE] || !!errors[FIELD_COLOR_CODE]} css={css}
             >
               <Field
                 component={FieldSelect}
@@ -89,6 +94,7 @@ const OrderForm = ({ onSubmit, errors, hasValidationErrors }) => {
 
             <FormBlock step={2} disable={currentForm !== 1} prevStep={prevForm} nextStep={nextForm}
               buttonDisabled={!!errors[FIELD_THICKNESS] || !!errors[FIELD_SIZE]}
+              css={css}
             >
               <Field
                 type={'number'}
@@ -112,6 +118,7 @@ const OrderForm = ({ onSubmit, errors, hasValidationErrors }) => {
             </FormBlock>
             <FormBlock step={3} disable={currentForm !== 2} prevStep={prevForm} nextStep={prevForm}
               buttonDisabled={!!errors[FIELD_COUNT]}
+              css={css}
             >
               <Field
                 type={'number'}
@@ -133,23 +140,27 @@ const OrderForm = ({ onSubmit, errors, hasValidationErrors }) => {
           </div>
         </Layout>
       </div>
-    </>
+    </div>
   )
 }
 
-const FormBlock = ({ children, disable, step, nextStep, prevStep, buttonDisabled }) => (
-  <div className={cn(css.block, { [css.block__disabled]: disable })}>
-    {children}
-    <div className={css.step}>
-      <div onClick={prevStep}>Шаг {step} / 3</div>
-      {
-        step !== 3
-          ? <Button className={disable ? css.next__opacity : css.next} disabled={buttonDisabled} color={'purple'} onClick={nextStep}>Далее<MdArrowForward /></Button>
-          : <Button leftIcon className={disable ? css.next__opacity : css.next} color={'inline__purple'} onClick={nextStep}><MdArrowBack />Назад</Button>
-      }
+const FormBlock = ({ children, disable, step, nextStep, prevStep, buttonDisabled, css }) => {
+  const isDesktop = useSelector(state => state.toJS().IsDesktop)
+  if (!isDesktop) return children
+  return (
+    <div className={cn(css.block, { [css.block__disabled]: disable })}>
+      {children}
+      <div className={css.step}>
+        <div onClick={prevStep}>Шаг {step} / 3</div>
+        {
+          step !== 3
+            ? <Button className={disable ? css.next__opacity : css.next} disabled={buttonDisabled} color={'purple'} onClick={nextStep}>Далее<MdArrowForward /></Button>
+            : <Button leftIcon className={disable ? css.next__opacity : css.next} color={'inline__purple'} onClick={nextStep}><MdArrowBack />Назад</Button>
+        }
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 OrderForm.propTypes = {
   data: PropTypes.object

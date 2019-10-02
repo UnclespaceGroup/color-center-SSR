@@ -1,0 +1,51 @@
+.container {
+  background-color: #F2F2F2;
+  padding: 3rem 0;
+  margin-top: 5.8rem;
+  transition: all 300ms ease-in;
+
+  &__empty {
+    composes: container;
+    opacity: 0;
+    height: 2rem;
+  }
+
+  .scrolled {
+    overflow-x: auto;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+    font-weight: 400;
+    line-height: 4.2rem;
+    color: #000000;
+  }
+
+  table {
+    margin-top: 3rem;
+    width: 250%;
+    border-spacing: 0;
+  }
+
+  th {
+    font-size: 1.2rem;
+    line-height: 2.1rem;
+    font-weight: 400;
+    color: #4F4F4F;
+    text-align: left;
+    padding-bottom: 1rem;
+    border-bottom: solid 1px #828282;
+  }
+
+  td {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: #4F4F4F;
+    border-bottom: solid 1px #828282;
+    padding: 1rem 0;
+
+    span {
+      font-size: 1.2rem;
+    }
+  }
+}

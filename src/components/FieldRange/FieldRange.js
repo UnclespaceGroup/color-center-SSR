@@ -1,15 +1,18 @@
 import React from 'react'
-import css from './FieldRange.module.scss'
+import cssDesktop from './FieldRange.module.scss'
+import cssMobile from './FieldRangeMobile.module.scss'
 import cn from 'classnames'
+import { useSelector } from 'react-redux'
 
 const FieldRange = ({ input, label, text, value, names = ['a', 'b'], meta, ...props }) => {
+  const isDesktop = useSelector(state => state.toJS().IsDesktop)
+  const css = isDesktop ? cssDesktop : cssMobile
   const inputChange = name => val => {
     input.onChange({
       ...input.value,
       [name]: val.target.value
     })
   }
-  console.log(input)
   const error = ((input.value[names[0]] && input.value[names[1]]) && (!meta.pristine && meta.error)) ? meta.error : null
   const success = !meta.pristine && !meta.error
   return (

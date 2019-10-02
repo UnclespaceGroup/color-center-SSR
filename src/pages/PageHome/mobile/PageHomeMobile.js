@@ -11,6 +11,7 @@ import car from '../../../static/car.jpg'
 import Bg from '../../../components/Bg/Bg'
 import Footer from '../../../components/Footer/FooterMobile'
 import Header from '../../../components/Header/HeaderMobile'
+// import OrderFormContainer from '../../../containers/OrderFormContainer/OrderFormContainer'
 
 const PageHomeMobile = () => (
   <div className={css.container}>
@@ -29,7 +30,8 @@ const PageHomeMobile = () => (
       <BannerMobile bgColor={'rgba(0,0,0,0.5)'} title={'Бесплатная доставка'} text={'Бесплатно по городу Сыктывкар. Возможность доставки по республике Коми'} />
     </Bg>
     <Padding value={60} />
-    <Padding value={120} />
+    {/* <OrderFormContainer /> */}
+    <Padding value={0} />
     <Footer />
   </div>
 )

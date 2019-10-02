@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import _ from 'lodash'
 import OrderForm from '../../components/OrderForm/OrderForm'
 import { Form } from 'react-final-form'
@@ -11,12 +12,21 @@ import {
   FORM_ORDER
 } from '../../constants/FORM_DATA'
 import FormStateToRedux from '../../helpers/FormStateToRedux'
-import TableOrders from '../../components/TableOrders/TableOrders'
-import ModalOrder from '../ModalOrder/ModalOrder'
-import OrderFeedbackForm from '../../components/OrderFeedbackForm/OrderFeedbackForm'
-import SuccessForm from '../../components/SuccessForm/SuccessForm'
+import TableOrdersDesktop from '../../components/TableOrders/TableOrders'
+import TableOrdersMobile from '../../components/TableOrders/TableOrdersMobile'
+import ModalOrderDesktop from '../ModalOrder/ModalOrder'
+import ModalOrderMobile from '../ModalOrder/ModalOrderMobile'
+import OrderFeedbackFormDesktop from '../../components/OrderFeedbackForm/OrderFeedbackForm'
+import OrderFeedbackFormMobile from '../../components/OrderFeedbackForm/OrderFeedbackFormMobile'
+import SuccessFormDesktop from '../../components/SuccessForm/SuccessForm'
+import SuccessFormMobile from '../../components/SuccessForm/SuccessFormMobile'
 
 const OrderFormContainer = () => {
+  const isDesktop = useSelector(state => state.toJS().IsDesktop)
+  const TableOrders = isDesktop ? TableOrdersDesktop : TableOrdersMobile
+  const ModalOrder = isDesktop ? ModalOrderDesktop : ModalOrderMobile
+  const SuccessForm = isDesktop ? SuccessFormDesktop : SuccessFormMobile
+  const OrderFeedbackForm = isDesktop ? OrderFeedbackFormDesktop : OrderFeedbackFormMobile
   const [ formData, setFormData ] = useState([])
   const [ isOpenModal, setOpenModal ] = useState(false)
   const [ showSuccess, setShowSuccess ] = useState(false)
@@ -47,7 +57,7 @@ const OrderFormContainer = () => {
         form={FORM_ORDER}
         initialValues={{ }}
         onSubmit={(data) => { onAddData(data) }}
-        render={({ form: { submit, reset, change }, pristine, hasValidationErrors, errors, ...props }) => console.log(props) || (
+        render={({ form: { submit, reset, change }, pristine, hasValidationErrors, errors, ...props }) => (
           <form>
             <FormStateToRedux form={FORM_ORDER} />
             <OrderForm
@@ -73,7 +83,7 @@ const OrderFormContainer = () => {
               form={FORM_FEEDBACK}
               initialValues={{}}
               onSubmit={(data) => { onSubmitData(data) }}
-              render={({ form: { submit, reset }, pristine, hasValidationErrors, ...props }) => console.log(props) || (
+              render={({ form: { submit, reset }, pristine, hasValidationErrors, ...props }) => (
                 <form>
                   <OrderFeedbackForm
                     onSubmit={submit}

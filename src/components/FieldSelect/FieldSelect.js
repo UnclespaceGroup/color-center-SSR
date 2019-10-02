@@ -1,9 +1,13 @@
 import React from 'react'
 import ReactSelect from 'react-select'
-import css from './FieldSelect.module.scss'
+import cssDesktop from './FieldSelect.module.scss'
+import cssMobile from './FieldSelectMobile.module.scss'
 import cn from 'classnames'
+import { useSelector } from 'react-redux'
 
 const FieldSelect = ({ input, label, text, value, options, meta, ...props }) => {
+  const isDesktop = useSelector(state => state.toJS().IsDesktop)
+  const css = isDesktop ? cssDesktop : cssMobile
   const error = (meta.touched && meta.error) ? meta.error : null
   const success = !meta.pristine && !meta.error
   return (

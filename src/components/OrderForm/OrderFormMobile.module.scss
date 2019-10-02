@@ -1,0 +1,52 @@
+.container {
+  //overflow: hidden;
+  transition: all ease-in 500ms;
+}
+
+.current_form_1 {
+  transform: translateX(-100vw);
+}
+.current_form_2 {
+  transform: translateX(-200vw);
+}
+
+.form {
+}
+
+.block {
+  width: 32rem;
+  position: relative;
+  padding-bottom: 7rem;
+  transition: all 200ms ease-in;
+
+  &__disabled {
+    pointer-events: none;
+    opacity: 0.2;
+  }
+}
+
+.step {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  bottom: 0;
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+  color: #000000;
+}
+
+.next {
+  transition: opacity 400ms ease-in;
+  margin-left: 2rem;
+
+  &__opacity {
+    composes: next;
+    opacity: 0;
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
