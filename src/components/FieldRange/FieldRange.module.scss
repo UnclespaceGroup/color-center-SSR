@@ -75,6 +75,17 @@
 
 .line {
   border-top: solid 3px #9B51E0;
+  transition: all 200ms ease-in;
+
+  &__error {
+    composes: line;
+    border-color: red;
+  }
+
+  &__success {
+    composes: line;
+    border-color: darkgreen;
+  }
 }
 
 .text {
@@ -83,4 +94,10 @@
   font-size: 1.3rem;
   line-height: 1.6rem;
   color: #727272;
+}
+
+.errors {
+  composes: text;
+  height: 1rem;
+  color: red;
 }

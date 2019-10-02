@@ -18,12 +18,14 @@ import {
   FIELD_THICKNESS,
   FIELD_WIDTH
 } from '../../constants/FORM_DATA'
+import { required, requiredRange } from '../../utils/validators'
 
-const OrderForm = ({ onSubmit }) => {
+const OrderForm = ({ onSubmit, errors, hasValidationErrors }) => {
   const [currentForm, setCurrentForm] = useState(0)
   const nextForm = () => { setCurrentForm(currentForm + 1) }
   const prevForm = () => { setCurrentForm(currentForm - 1) }
   const startPosForm = () => { setCurrentForm(0) }
+  console.log(hasValidationErrors)
   return (
     <>
       <Layout>
@@ -33,7 +35,9 @@ const OrderForm = ({ onSubmit }) => {
         <Layout>
           <Padding value={40} />
           <div className={css.form}>
-            <FormBlock step={1} disable={currentForm !== 0} prevStep={prevForm} nextStep={nextForm}>
+            <FormBlock step={1} disable={currentForm !== 0} prevStep={prevForm} nextStep={nextForm}
+              buttonDisabled={!!errors[FIELD_COLOR_SHADE] || !!errors[FIELD_COLOR_CODE]}
+            >
               <Field
                 component={FieldSelect}
                 options={[
@@ -53,6 +57,7 @@ const OrderForm = ({ onSubmit }) => {
                 name={FIELD_COLOR_SHADE}
                 label={'Оттенок панели'}
                 text={''}
+                validate={required}
               />
               <Field
                 type={'text'}
@@ -78,10 +83,13 @@ const OrderForm = ({ onSubmit }) => {
                 name={FIELD_COLOR_CODE}
                 label={'Цвет панели'}
                 text={''}
+                validate={required}
               />
             </FormBlock>
 
-            <FormBlock step={2} disable={currentForm !== 1} prevStep={prevForm} nextStep={nextForm}>
+            <FormBlock step={2} disable={currentForm !== 1} prevStep={prevForm} nextStep={nextForm}
+              buttonDisabled={!!errors[FIELD_THICKNESS] || !!errors[FIELD_SIZE]}
+            >
               <Field
                 type={'number'}
                 component={FieldInput}
@@ -89,6 +97,7 @@ const OrderForm = ({ onSubmit }) => {
                 label={'Толщина панели'}
                 text={''}
                 caption={'Милиметры'}
+                validate={required}
               />
               <Field
                 type={'text'}
@@ -98,9 +107,12 @@ const OrderForm = ({ onSubmit }) => {
                 names={[FIELD_LENGTH, FIELD_WIDTH]}
                 label={'Размеры панели'}
                 text={'Обязательно к заполнению'}
+                validate={requiredRange}
               />
             </FormBlock>
-            <FormBlock step={3} disable={currentForm !== 2} prevStep={prevForm} nextStep={prevForm}>
+            <FormBlock step={3} disable={currentForm !== 2} prevStep={prevForm} nextStep={prevForm}
+              buttonDisabled={!!errors[FIELD_COUNT]}
+            >
               <Field
                 type={'number'}
                 component={FieldInput}
@@ -108,11 +120,14 @@ const OrderForm = ({ onSubmit }) => {
                 label={'Количество'}
                 text={''}
                 caption={'штук'}
+                validate={required}
               />
-              <Button className={css.btn} color={'purple'} onClick={() => {
-                startPosForm()
-                onSubmit()
-              }} >Сделать заказ</Button>
+              <Button className={css.btn} color={'purple'}
+                disabled={hasValidationErrors}
+                onClick={() => {
+                  startPosForm()
+                  onSubmit()
+                }} >Сделать заказ</Button>
               <Button className={css.btn} classname={'inline__purple'} onClick={startPosForm}>В начало</Button>
             </FormBlock>
           </div>
@@ -122,14 +137,14 @@ const OrderForm = ({ onSubmit }) => {
   )
 }
 
-const FormBlock = ({ children, disable, step, nextStep, prevStep }) => (
+const FormBlock = ({ children, disable, step, nextStep, prevStep, buttonDisabled }) => (
   <div className={cn(css.block, { [css.block__disabled]: disable })}>
     {children}
     <div className={css.step}>
       <div onClick={prevStep}>Шаг {step} / 3</div>
       {
         step !== 3
-          ? <Button className={disable ? css.next__opacity : css.next} color={'purple'} onClick={nextStep}>Далее<MdArrowForward /></Button>
+          ? <Button className={disable ? css.next__opacity : css.next} disabled={buttonDisabled} color={'purple'} onClick={nextStep}>Далее<MdArrowForward /></Button>
           : <Button leftIcon className={disable ? css.next__opacity : css.next} color={'inline__purple'} onClick={nextStep}><MdArrowBack />Назад</Button>
       }
     </div>

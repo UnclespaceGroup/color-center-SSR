@@ -1,0 +1,31 @@
+.container {
+  display: block;
+  padding-left: 4rem;
+  position: relative;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  color: #4F4F4F;
+
+  span:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid #9B51E0;
+  }
+
+  input:checked + span {
+    &:before {
+      background: #9B51E0 url("../../static/svg/check-24px-white.svg") no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  input {
+    display: none;
+  }
+}

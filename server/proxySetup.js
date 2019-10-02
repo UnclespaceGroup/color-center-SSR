@@ -2,8 +2,27 @@ const httpProxy = require('http-proxy')
 const crypto = require('crypto')
 const pako = require('pako')
 const axios = require('axios')
-const soapRequest = require('easy-soap-request')
 const bodyParser = require('body-parser')
+
+var nodemailer = require('nodemailer')
+
+var transport = {
+  host: 'smtp.gmail.com',
+  auth: {
+    user: 'i.dmitrachkov@aic.ru',
+    pass: 'O4SXUexX!q'
+  }
+}
+
+var transporter = nodemailer.createTransport(transport)
+
+transporter.verify((error, success) => {
+  if (error) {
+    console.log(error)
+  } else {
+    console.log('Server is ready to take messages')
+  }
+})
 
 module.exports = (app) => {
   const clientUserName = process.env.REACT_APP_API_CLIENT_USERNAME
@@ -27,8 +46,31 @@ module.exports = (app) => {
     res.end()
   })
   // add proxy like this
-  app.use('/api/', (req, res) => {
-    proxy.web(req, res, { changeOrigin: true, target: process.env.REACT_APP_API_URL })
+  app.use('/send/', (req, res) => {
+    var name = 'name' // req.body.name || 'name'
+    var email = 'dmitrachkovivan@gmail.com' // req.body.email || 'dmitrachkovivivan@gmail.com'
+    var message = 'fdbsmfb' // req.body.message || 'dfdd'
+    var content = 'dsnndc' //`name: ${name} \n email: ${email} \n message: ${message} `
+
+    var mail = {
+      from: name,
+      to: 'dmitrachkovivan@yandex.ru',
+      subject: 'New Message from Contact Form',
+      text: content
+    }
+
+    transporter.sendMail(mail, (err, data) => {
+      if (err) {
+        res.json({
+          msg: 'fail'
+        })
+      } else {
+        console.log(data)
+        res.json({
+          msg: 'success'
+        })
+      }
+    })
   })
 
   app.use('/samo/:method', bodyParser.text(), (req, res) => {
@@ -48,33 +90,6 @@ module.exports = (app) => {
       .catch((error) => {
         const { response: { status = 400, data } = {} } = error
         res.status(status).send(data)
-      })
-  })
-
-  app.use('/soap/', bodyParser.text(), (req, res) => {
-    const url = process.env.REACT_APP_SOAP_API_URL
-    const username = process.env.REACT_APP_SOAP_API_USERNAME
-    const password = process.env.REACT_APP_SOAP_API_PASSWORD
-
-    let request
-    try {
-      const xml = req.body.replace('$$username$$', clientUserName).replace('$$password$$', clientPassword)
-      request = createRequest(xml, username, password)
-    } catch (e) {
-      return res.status(500).end()
-    }
-
-    return soapRequest(url, {}, request, 15000)
-      .then(({ response: { headers, body, statusCode } }) => {
-        const resultXmlMatch = body.match(/<return[^>]*>([^<]*)<\/return>/)
-        const resultXml = resultXmlMatch && resultXmlMatch[1]
-        const result = decodeXml(resultXml, password)
-        res.set(headers)
-        res.status(statusCode).send(result)
-      })
-      .catch((error) => {
-        console.log(error, 'error')
-        res.status(500).end()
       })
   })
 }

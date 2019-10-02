@@ -21,6 +21,17 @@
 
 .line {
   border-top: solid 3px #9B51E0;
+  transition: all 200ms ease-in;
+
+  &__error {
+    composes: line;
+    border-color: red;
+  }
+
+  &__success {
+    composes: line;
+    border-color: darkgreen;
+  }
 }
 
 .text {
@@ -34,8 +45,14 @@
 .caption {
   position: absolute;
   right: 1rem;
-  bottom: 3.2rem;
+  top: 5.5rem;
   font-size: 1.6rem;
   line-height: 3.5rem;
   color: #727272;
+}
+
+.errors {
+  composes: text;
+  height: 1rem;
+  color: red;
 }

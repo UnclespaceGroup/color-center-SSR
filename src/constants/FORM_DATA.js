@@ -9,3 +9,8 @@ export const FIELD_WIDTH = 'FIELD_WIDTH'
 export const FIELD_LENGTH = 'FIELD_LENGTH'
 export const FIELD_THICKNESS = 'FIELD_THICKNESS'
 export const FIELD_COUNT = 'FIELD_COUNT'
+
+export const FORM_FEEDBACK = 'FORM_FEEDBACK'
+export const FIELD_NAME = 'FIELD_NAME'
+export const FIELD_PHONE = 'FIELD_PHONE'
+export const FIELD_AGREE = 'FIELD_AGREE'

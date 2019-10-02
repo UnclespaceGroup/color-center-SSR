@@ -9,16 +9,33 @@
   }
 }
 
-.line {
-  border-top: solid 3px #9B51E0;
-}
-
 .text {
   margin-top: 1rem;
   margin-left: 1.5rem;
   font-size: 1.4rem;
   line-height: 1.6rem;
   color: #4F4F4F;
+}
+
+.line {
+  border-top: solid 3px #9B51E0;
+  transition: all 200ms ease-in;
+
+  &__error {
+    composes: line;
+    border-color: red;
+  }
+
+  &__success {
+    composes: line;
+    border-color: darkgreen;
+  }
+}
+
+.errors {
+  composes: text;
+  height: 1rem;
+  color: red;
 }
 
 :global {

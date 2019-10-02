@@ -51,3 +51,8 @@
     background-color: #b15cff;
   }
 }
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

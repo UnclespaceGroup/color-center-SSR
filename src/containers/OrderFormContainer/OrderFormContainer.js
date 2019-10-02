@@ -6,49 +6,22 @@ import {
   FIELD_COLOR_CODE,
   FIELD_COLOR_SHADE, FIELD_COUNT,
   // FIELD_LENGTH,
-  FIELD_SIZE, FIELD_THICKNESS,
+  FIELD_SIZE, FIELD_THICKNESS, FORM_FEEDBACK,
   // FIELD_WIDTH,
   FORM_ORDER
 } from '../../constants/FORM_DATA'
-// import { useSelector } from 'react-redux'
 import FormStateToRedux from '../../helpers/FormStateToRedux'
 import TableOrders from '../../components/TableOrders/TableOrders'
-
-// const colorOptions = [
-//   {
-//     label: <div>dkdjcnc</div>,
-//     value: '#FF3A34'
-//   },
-//   {
-//     label: '#555FFF',
-//     value: '#555FFF'
-//   },
-//   {
-//     label: '#FF00FF',
-//     value: '#FF00FF'
-//   },
-//   {
-//     label: '#00FF00',
-//     value: '#00FF00'
-//   }
-// ]
-// const colorTypeOptions = [
-//   {
-//     label: 'Металлик',
-//     value: '1'
-//   },
-//   {
-//     label: 'Глянцевый',
-//     value: '2'
-//   },
-//   {
-//     label: 'Матовый',
-//     value: '3'
-//   }
-// ]
+import ModalOrder from '../ModalOrder/ModalOrder'
+import OrderFeedbackForm from '../../components/OrderFeedbackForm/OrderFeedbackForm'
+import SuccessForm from '../../components/SuccessForm/SuccessForm'
+import sendMail from '../../utils/nodemailer'
+import Button from '../../components/Button/Button'
 
 const OrderFormContainer = () => {
   const [ formData, setFormData ] = useState([])
+  const [ isOpenModal, setOpenModal ] = useState(false)
+  const [ showSuccess, setShowSuccess ] = useState(false)
 
   // const formReduxValues = _.get(
   //   useSelector(state => state.toJS().finalForm[FORM_ORDER]),
@@ -56,6 +29,10 @@ const OrderFormContainer = () => {
   //   {}
   // )
   console.log(formData)
+
+  const send = () => {
+    sendMail()
+  }
 
   const onAddData = (data) => {
     const currentData = {
@@ -68,6 +45,10 @@ const OrderFormContainer = () => {
     setFormData(formData.concat([currentData]))
   }
 
+  const onSubmitData = () => {
+    setShowSuccess(true)
+  }
+
   const deleteItem = (id) => {
     const newData = _.filter((formData, key) => key !== id)
     setFormData(newData)
@@ -75,23 +56,49 @@ const OrderFormContainer = () => {
 
   return (
     <>
+      <Button classname={'purple'} onClick={send}>Отправить</Button>
       <Form
         form={FORM_ORDER}
         initialValues={{ }}
         onSubmit={(data) => { onAddData(data) }}
-        render={({ form: { submit, reset } }) => (
+        render={({ form: { submit, reset, change }, pristine, hasValidationErrors, errors, ...props }) => console.log(props) || (
           <form>
             <FormStateToRedux form={FORM_ORDER} />
-            <OrderForm onSubmit={data => {
-              submit(data)
-              reset()
-            }
-            } />
+            <OrderForm
+              hasValidationErrors={hasValidationErrors}
+              errors={errors}
+              onSubmit={data => {
+                submit(data)
+                reset()
+              }}
+            />
           </form>
         )
         }
       />
-      <TableOrders items={formData} deleteItem={deleteItem} />
+      <TableOrders onButtonClick={() => setOpenModal(true)} items={formData} deleteItem={deleteItem} />
+      <ModalOrder
+        isOpen={isOpenModal}
+        closeModal={() => setOpenModal(false)}
+      >
+        {
+          !showSuccess
+            ? <Form
+              form={FORM_FEEDBACK}
+              initialValues={{}}
+              onSubmit={(data) => { onSubmitData(data) }}
+              render={({ form: { submit, reset }, pristine, hasValidationErrors, ...props }) => console.log(props) || (
+                <form>
+                  <OrderFeedbackForm
+                    onSubmit={submit}
+                    disabled={pristine || hasValidationErrors}
+                  />
+                </form>
+              )}
+            />
+            : <SuccessForm onClose={() => setOpenModal(false)} />
+        }
+      </ModalOrder>
     </>
   )
 }

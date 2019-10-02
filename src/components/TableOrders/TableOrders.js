@@ -15,7 +15,7 @@ import {
 import Button from '../Button/Button'
 import Padding from '../Padding/Padding'
 
-const TableOrders = ({ items, deleteItem }) => (
+const TableOrders = ({ items, deleteItem, onButtonClick }) => (
   <div className={items.length ? css.container : css.container__empty}>
     <Layout >
       <h3>Корзина</h3>
@@ -46,7 +46,7 @@ const TableOrders = ({ items, deleteItem }) => (
         </tbody>
       </table>
       <Padding value={24} />
-      <Button classname={'purple'}>Сделать заказ</Button>
+      <Button classname={'purple'} onClick={onButtonClick}>Сделать заказ</Button>
     </Layout>
   </div>
 )
