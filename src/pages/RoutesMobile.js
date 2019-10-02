@@ -1,11 +1,15 @@
-// packages
 import React from 'react'
-// import { Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router'
+import PageHomeMobile from './PageHome/mobile/PageHomeMobile'
+import { PAGE_HOME } from '../constants/ROUTES'
 
 const RoutesMobile = () => (
-  <div>
-mobile
-  </div>
+  <Switch>
+    <Route component={PageHomeMobile}
+      exact
+      path={PAGE_HOME}
+    />
+  </Switch>
 )
 
 export default RoutesMobile

@@ -15,24 +15,11 @@ import TableOrders from '../../components/TableOrders/TableOrders'
 import ModalOrder from '../ModalOrder/ModalOrder'
 import OrderFeedbackForm from '../../components/OrderFeedbackForm/OrderFeedbackForm'
 import SuccessForm from '../../components/SuccessForm/SuccessForm'
-import sendMail from '../../utils/nodemailer'
-import Button from '../../components/Button/Button'
 
 const OrderFormContainer = () => {
   const [ formData, setFormData ] = useState([])
   const [ isOpenModal, setOpenModal ] = useState(false)
   const [ showSuccess, setShowSuccess ] = useState(false)
-
-  // const formReduxValues = _.get(
-  //   useSelector(state => state.toJS().finalForm[FORM_ORDER]),
-  //   'values',
-  //   {}
-  // )
-  console.log(formData)
-
-  const send = () => {
-    sendMail()
-  }
 
   const onAddData = (data) => {
     const currentData = {
@@ -56,7 +43,6 @@ const OrderFormContainer = () => {
 
   return (
     <>
-      <Button classname={'purple'} onClick={send}>Отправить</Button>
       <Form
         form={FORM_ORDER}
         initialValues={{ }}

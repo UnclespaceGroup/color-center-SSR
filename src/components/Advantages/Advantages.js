@@ -8,7 +8,7 @@ import im4 from 'static/svg/house-24px.svg'
 import im5 from 'static/svg/build.svg'
 import im6 from 'static/svg/landscape-24px.svg'
 
-const items = [
+export const items = [
   {
     img: im1,
     title: 'Тепло и звукоизоляция',

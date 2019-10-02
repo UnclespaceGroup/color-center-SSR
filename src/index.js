@@ -10,6 +10,7 @@ import App from './App'
 import ElasticAdaptive from 'HOC/ElasticAdaptive'
 import './styles/styles.scss'
 import './static/roboto/stylesheet.css'
+import 'react-id-swiper/src/styles/css/swiper.css'
 
 const store = configureStore()
 
