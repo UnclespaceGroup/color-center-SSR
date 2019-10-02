@@ -7,6 +7,9 @@ import UsingMDFMobile from '../../../components/UsingMDF/UsingMDFMobile'
 import iconGalka from '../../../static/svg/check-24px-white.svg'
 import BannerMobile from '../../../components/Banner/BannerMobile'
 import BlockColors from '../../../components/BlockColors/BlockColorsMobile'
+import car from '../../../static/car.jpg'
+import Bg from '../../../components/Bg/Bg'
+import Footer from '../../../components/Footer/FooterMobile'
 
 const PageHomeMobile = () => (
   <div className={css.container}>
@@ -20,7 +23,12 @@ const PageHomeMobile = () => (
     <Padding value={60} />
     <BlockColors />
     <Padding value={60} />
+    <Bg img={car}>
+      <BannerMobile bgColor={'rgba(0,0,0,0.5)'} title={'Бесплатная доставка'} text={'Бесплатно по городу Сыктывкар. Возможность доставки по республике Коми'} />
+    </Bg>
+    <Padding value={60} />
     <Padding value={120} />
+    <Footer />
   </div>
 )
 
