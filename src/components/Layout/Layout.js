@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import css from './Layout.module.scss'
 import cn from 'classnames'
 
-const Layout = ({ children, className }) => (
-  <div className={cn(css.layout, className)}>{children}</div>
+const Layout = ({ children, className, id }) => (
+  <div className={cn(css.layout, className)} id={id}>{children}</div>
 )
 Layout.propTypes = {
   children: PropTypes.node,

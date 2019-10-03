@@ -1,6 +1,6 @@
 import React, { useMemo, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import css from './ModalOrder.module.scss'
+import css from './ModalMobile.module.scss'
 import { MdClose } from 'react-icons/md'
 import { compose } from 'redux'
 

@@ -1,10 +1,10 @@
 import React, { useMemo, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import css from './ModalOrderMobile.module.scss'
+import css from './Modal.module.scss'
 import { MdClose } from 'react-icons/md'
 import { compose } from 'redux'
 
-const ModalOrder = ({ children, isOpen, closeModal }) => {
+const Modal = ({ children, isOpen, closeModal }) => {
   useEffect(() => {
     if (typeof document !== 'undefined') {
       document.getElementsByTagName('body')[0].style.overflowY = 'auto'
@@ -38,10 +38,10 @@ const ModalOrder = ({ children, isOpen, closeModal }) => {
       : <div />
   )
 }
-ModalOrder.propTypes = {
+Modal.propTypes = {
   children: PropTypes.node
 }
 
 export default compose(
   React.memo
-)(ModalOrder)
+)(Modal)

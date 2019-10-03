@@ -12,6 +12,11 @@ import Bg from '../../../components/Bg/Bg'
 import Footer from '../../../components/Footer/Footer'
 import Header from '../../../components/Header/Header'
 import Prices from '../../../components/Prices/Prices'
+import Contacts from '../../../components/Contacts/Contacts'
+import { ANCHOR_CONTACTS, ANCHOR_PRICE } from '../../../constants/ANCHORS'
+import ModalWayOrder from '../../../containers/ModalWayOrder/ModalWayOrder'
+import { useDispatch } from 'react-redux'
+import { openWayOrdersModal } from '../../../actions/openWayOrdersModal'
 // import OrderFormContainer from '../../../containers/OrderFormContainer/OrderFormContainer'
 
 export const text = <div>
@@ -20,31 +25,40 @@ export const text = <div>
   <p>Работаем без выходных.</p>
 </div>
 
-const PageHomeDesktop = () => (
-  <div className={s.container}>
-    <Header />
-    <MainBanner />
-    <Padding value={120} />
-    <Advantages />
-    <Padding value={160} />
-    <UsingMDF />
-    <Padding value={120} />
-    <Banner title={'Гарантия качества'} text={'Покраска производятся в специально оборудованном помещении в строгом соблюдении технологий'} icon={iconGalka} />
-    <Padding value={120} />
-    <BlockColors />
-    <Padding value={120} />
-    <Bg img={car}>
-      <Banner bgColor={'rgba(0,0,0,0.5)'} title={'Бесплатная доставка'} text={'Бесплатно по городу Сыктывкар. Возможность доставки по республике Коми'} />
-    </Bg>
-    <Padding value={120} />
-    <Prices />
-    <Padding value={120} />
-    <Banner title={'Заказать очень легко'} text={text} icon={iconGalka} />
-    <Padding value={120} />
-    {/* <OrderFormContainer /> */}
-    {/* <Padding value={120} /> */}
-    <Footer />
-  </div>
-)
+const PageHomeDesktop = () => {
+  const dispatch = useDispatch()
+  const openWayOrderModal = (open) => {
+    dispatch(openWayOrdersModal(open))
+  }
+  return (
+    <div className={s.container}>
+      <ModalWayOrder openWayOrderModal={openWayOrderModal} />
+      <Header openWayOrderModal={openWayOrderModal} />
+      <MainBanner />
+      <Padding value={120} />
+      <Advantages />
+      <Padding value={160} />
+      <UsingMDF openWayOrderModal={openWayOrderModal} />
+      <Padding value={120} />
+      <Banner title={'Гарантия качества'} text={'Покраска производятся в специально оборудованном помещении в строгом соблюдении технологий'} icon={iconGalka} />
+      <Padding value={120} />
+      <BlockColors />
+      <Padding value={120} />
+      <Bg img={car}>
+        <Banner bgColor={'rgba(0,0,0,0.5)'} title={'Бесплатная доставка'} text={'Бесплатно по городу Сыктывкар. Возможность доставки по республике Коми'} />
+      </Bg>
+      <Padding value={120} />
+      <Prices id={ANCHOR_PRICE} openWayOrderModal={openWayOrderModal} />
+      <Padding value={120} />
+      <Banner title={'Заказать очень легко'} text={text} icon={iconGalka} />
+      <Padding value={120} />
+      <Contacts id={ANCHOR_CONTACTS} />
+      <Padding value={120} />
+      {/* <OrderFormContainer /> */}
+      {/* <Padding value={120} /> */}
+      <Footer />
+    </div>
+  )
+}
 
 export default React.memo(PageHomeDesktop)

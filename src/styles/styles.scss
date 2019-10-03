@@ -55,7 +55,8 @@ h2 {
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 3.2rem;
+  font-weight: 300;
 }
 
 h4 {
@@ -63,9 +64,9 @@ h4 {
 }
 
 p {
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0 0 1rem;
 }
 
 img {

@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper {
+  width: 50%;
+  padding: 0 5rem;
+}
+
+.item {
+  display: flex;
+  margin-bottom: 2rem;
+
+  &__icon {
+    width: 2.4rem;
+    margin-right: 2rem;
+
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      color: dimgrey;
+    }
+  }
+  &__title, &__title p {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+}

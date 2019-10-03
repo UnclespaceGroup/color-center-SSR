@@ -69,8 +69,8 @@ const params = {
   }
 }
 
-const Prices = () => (
-  <>
+const Prices = ({ id, openWayOrderModal }) => (
+  <div id={id}>
     <Layout >
       <h2>Цены на заказ МДФ</h2>
     </Layout>
@@ -79,15 +79,15 @@ const Prices = () => (
       {
         items.map((item, key) => (
           <div key={key}>
-            <Price key={key} mini={key > 1} {...item} />
+            <Price key={key} mini={key > 1} {...item} openWayOrderModal={openWayOrderModal} />
           </div>
         ))
       }
     </Swiper>
-  </>
+  </div>
 )
 
-const Price = ({ title, price, features = [], mini, tooltip, text }) => (
+const Price = ({ title, price, features = [], mini, tooltip, text, openWayOrderModal }) => (
   <div className={mini ? css.wrapper__mini : css.wrapper} >
     { tooltip && <div className={css.info} data-tip='' data-for='test' >
       <MdInfo />
@@ -104,7 +104,7 @@ const Price = ({ title, price, features = [], mini, tooltip, text }) => (
     </div>
     <div className={css.footer}>
       <div className={css.price}>{price} <span>руб./м<sup>2</sup></span></div>
-      <Button className={css.btn} classname={'purple'}>Заказать</Button>
+      <Button className={css.btn} onClick={() => { openWayOrderModal(true) }} classname={'purple'}>Заказать</Button>
     </div>
   </div>
 )
