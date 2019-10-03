@@ -5,6 +5,7 @@ import Layout from '../Layout/Layout'
 import Padding from '../Padding/Padding'
 import _ from 'lodash'
 import { MdPlace, MdPhone, MdAccessTime } from 'react-icons/md'
+import { MAIN_PHONE_LINK, PHONE_LINK_BIG } from '../../constants/USER_DATA'
 
 const mapProps = {
   width: '50%',
@@ -22,7 +23,7 @@ export const contacts = [
     icon: <MdPlace />
   },
   {
-    title: '<p>569-884</p><p>89048686163</p>',
+    title: <div><p>{MAIN_PHONE_LINK}</p><p>{PHONE_LINK_BIG}</p></div>,
     icon: <MdPhone />
   },
   {
@@ -47,7 +48,7 @@ const Contacts = ({ id }) => (
         _.map(contacts, (contact, key) => (
           <div key={key} className={css.item}>
             <div className={css.item__icon}>{contact.icon}</div>
-            <div className={css.item__title} dangerouslySetInnerHTML={{ __html: contact.title }} />
+            <div className={css.item__title} >{contact.title}</div>
           </div>
         ))
       }

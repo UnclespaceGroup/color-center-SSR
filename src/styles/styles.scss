@@ -86,7 +86,8 @@ input {
 
 a {
   cursor: pointer;
-  color: color(black);
+  color: inherit;
+  font-weight: 500;
   text-decoration: none;
 }
 

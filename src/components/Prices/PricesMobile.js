@@ -61,6 +61,7 @@ const params = {
   effect: 'coverflow',
   centeredSlides: true,
   slideClass: css.slide,
+  loop: true,
   containerClass: css.container,
   spaceBetween: 30,
   pagination: {
