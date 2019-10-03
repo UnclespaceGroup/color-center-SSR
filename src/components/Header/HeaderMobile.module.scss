@@ -40,6 +40,7 @@
 .wrapper {
   border-top: solid 1px dimgrey;
   padding: 3rem 2rem;
+  background-color: white;
 }
 
 .item {
@@ -66,5 +67,22 @@
     margin-bottom: -0.5rem;
     background: url("../../static/svg/phone.svg") no-repeat center;
     background-size: contain;
+  }
+}
+
+.back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+  transition: all 200ms ease-in;
+
+  &__active {
+    composes: back;
+    pointer-events: auto;
+    background-color: rgba(0,0,0,0.7);
   }
 }

@@ -30,7 +30,8 @@ const ModalOrder = ({ children, isOpen, closeModal }) => {
   return (
     isOpen
       ? <div className={css.container} >
-        <div className={css.wrapper}>
+        <div className={css.back} onClick={closeModal} />
+        <div className={css.wrapper} >
           <div className={css.close} onClick={closeModal}><MdClose /></div>
           {children}
         </div>
