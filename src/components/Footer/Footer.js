@@ -2,14 +2,14 @@ import React from 'react'
 import css from './Footer.module.scss'
 import img from '../../static/shkaf.jpg'
 import Layout from '../Layout/Layout'
-import { MAIN_PHONE } from '../../constants/USER_DATA'
+import { MAIN_PHONE, MAIN_PHONE_LINK } from '../../constants/USER_DATA'
 
 const Footer = () => (
   <div className={css.container} style={{ backgroundImage: `url(${img})` }}>
     <Layout>
       <div className={css.wrapper}>
         <div className={css.info}>
-          <div className={css.number}>{MAIN_PHONE}</div>
+          <div className={css.number}>{MAIN_PHONE_LINK}</div>
           <p>Центр Цвета, Сыктывкар</p>
           <p style={{ marginTop: '2rem', marginBottom: '6rem' }}>Круглосуточно, без выходных</p>
           <div className={css.socials}>

@@ -1,5 +1,18 @@
 .container {
+  position: relative;
   height: 100vh;
+
+  &:before {
+    position: absolute;
+    content: 'Уют в вашем доме';
+    right: 20vw;
+    top: 30%;
+    font-weight: bold;
+    font-size: 7.2rem;
+    line-height: 8.4rem;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
 }
 
 .wrapper {
