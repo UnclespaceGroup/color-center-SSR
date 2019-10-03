@@ -2,6 +2,10 @@
   background: #262626;
   padding: 7rem 0 9.6rem;
   min-height: 40rem;
+
+  p {
+    margin-top: 1rem!important;
+  }
 }
 
 .wrapper {
@@ -25,11 +29,11 @@
   color: #FFFFFF;
 }
 
-.text {
+.text, .text p {
   margin-top: 5rem;
   font-weight: 300;
   font-size: 2rem;
-  line-height: 2.3rem;
+  line-height: 2.8rem;
   text-align: center;
   color: #FFFFFF;
 }

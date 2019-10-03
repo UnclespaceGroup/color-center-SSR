@@ -4,25 +4,25 @@ const pako = require('pako')
 const axios = require('axios')
 const bodyParser = require('body-parser')
 
-var nodemailer = require('nodemailer')
-
-var transport = {
-  host: 'smtp.gmail.com',
-  auth: {
-    user: 'i.dmitrachkov@aic.ru',
-    pass: 'O4SXUexX!q'
-  }
-}
-
-var transporter = nodemailer.createTransport(transport)
-
-transporter.verify((error, success) => {
-  if (error) {
-    console.log(error)
-  } else {
-    console.log('Server is ready to take messages')
-  }
-})
+// var nodemailer = require('nodemailer')
+//
+// var transport = {
+//   host: 'smtp.gmail.com',
+//   auth: {
+//     user: 'i.dmitrachkov@aic.ru',
+//     pass: 'O4SXUexX!q'
+//   }
+// }
+//
+// var transporter = nodemailer.createTransport(transport)
+//
+// transporter.verify((error, success) => {
+//   if (error) {
+//     console.log(error)
+//   } else {
+//     console.log('Server is ready to take messages')
+//   }
+// })
 
 module.exports = (app) => {
   const clientUserName = process.env.REACT_APP_API_CLIENT_USERNAME
@@ -46,32 +46,32 @@ module.exports = (app) => {
     res.end()
   })
   // add proxy like this
-  app.use('/send/', (req, res) => {
-    var name = 'name' // req.body.name || 'name'
-    var email = 'dmitrachkovivan@gmail.com' // req.body.email || 'dmitrachkovivivan@gmail.com'
-    var message = 'fdbsmfb' // req.body.message || 'dfdd'
-    var content = 'dsnndc' //`name: ${name} \n email: ${email} \n message: ${message} `
-
-    var mail = {
-      from: name,
-      to: 'dmitrachkovivan@yandex.ru',
-      subject: 'New Message from Contact Form',
-      text: content
-    }
-
-    transporter.sendMail(mail, (err, data) => {
-      if (err) {
-        res.json({
-          msg: 'fail'
-        })
-      } else {
-        console.log(data)
-        res.json({
-          msg: 'success'
-        })
-      }
-    })
-  })
+  // app.use('/send/', (req, res) => {
+  //   var name = 'name' // req.body.name || 'name'
+  //   var email = 'dmitrachkovivan@gmail.com' // req.body.email || 'dmitrachkovivivan@gmail.com'
+  //   var message = 'fdbsmfb' // req.body.message || 'dfdd'
+  //   var content = 'dsnndc' //`name: ${name} \n email: ${email} \n message: ${message} `
+  //
+  //   var mail = {
+  //     from: name,
+  //     to: 'dmitrachkovivan@yandex.ru',
+  //     subject: 'New Message from Contact Form',
+  //     text: content
+  //   }
+  //
+  //   transporter.sendMail(mail, (err, data) => {
+  //     if (err) {
+  //       res.json({
+  //         msg: 'fail'
+  //       })
+  //     } else {
+  //       console.log(data)
+  //       res.json({
+  //         msg: 'success'
+  //       })
+  //     }
+  //   })
+  // })
 
   app.use('/samo/:method', bodyParser.text(), (req, res) => {
     const baseUrl = process.env.REACT_APP_SAMO_API_URL

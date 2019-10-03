@@ -8,9 +8,14 @@ const params = {
   direction: 'horizontal',
   slidesPerView: 'auto',
   centeredSlides: true,
+  containerClass: css.container,
   loop: true,
   slideClass: css.wrapper,
-  spaceBetween: 30
+  spaceBetween: 30,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true
+  }
 }
 
 const AdvantagesMobile = () => {
@@ -21,7 +26,9 @@ const AdvantagesMobile = () => {
       >
         {
           items.map((item, key) => (
-            <AdvantagesItem {...item} key={key} />
+            <div key={key} >
+              <AdvantagesItem {...item} />
+            </div>
           ))
         }
       </Swiper>

@@ -1,0 +1,143 @@
+.container {
+  h3 {
+
+  }
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid #B5B5B5;
+  width: 48%;
+  padding: 2.4rem 5.4rem;
+  transition: all 200ms ease-in;
+  background: linear-gradient(112.61deg, #FFFFFF 0%, rgba(230, 230, 230, 0.73) 100%);
+
+  &:nth-child(2n) {
+    margin-left: 4%;
+  }
+
+  &:hover {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.50);
+  }
+}
+
+.wrapper__mini {
+  composes: wrapper;
+  width: 30%;
+  padding: 2.4rem 3rem;
+  margin-top: 5rem;
+  &:nth-child(2n) {
+    margin-left: 0;
+  }
+
+  &:not(:nth-child(3n)) {
+    margin-left: 5%;
+  }
+
+  .title {
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 4.2rem;
+    color: #000000;
+
+    &:after {
+      content: '';
+      display: block;
+      border-top: 2px solid #E30000;
+      width: 100%;
+      margin: 1rem 0 2.4rem;
+    }
+  }
+
+  .footer {
+    display: block;
+  }
+
+  .btn {
+    margin-top: 2rem;
+  }
+
+  .info {
+    bottom: 4rem;
+    top: auto;
+
+  }
+}
+
+.info {
+  position: absolute;
+  right: 2.5rem;
+  top: 2.5rem;
+  cursor: pointer;
+
+  svg {
+    width: 4rem;
+    height: 4rem;
+    color: dimgrey;
+  }
+}
+
+.text {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 3.6rem;
+  line-height: 4.2rem;
+  color: #000000;
+
+  &:after {
+    content: '';
+    display: block;
+    border-top: 2px solid #E30000;
+    width: 30rem;
+    margin: 1rem 0 2.4rem;
+  }
+}
+
+.item {
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  color: #000000;
+  margin-bottom: 1rem;
+
+  span {
+    font-weight: 400;
+  }
+}
+
+.footer {
+  margin-top: 5.6rem;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.price {
+  font-size: 6rem;
+  color: #000000;
+  white-space: nowrap;
+  margin-bottom: -1rem;
+
+  span {
+    font-weight: 300;
+    font-size: 3.6rem;
+  }
+}
+
+.btn {
+  padding: 0 4rem;
+}

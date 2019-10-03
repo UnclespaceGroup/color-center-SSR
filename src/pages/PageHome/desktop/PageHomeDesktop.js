@@ -11,7 +11,14 @@ import car from 'static/car.jpg'
 import Bg from '../../../components/Bg/Bg'
 import Footer from '../../../components/Footer/Footer'
 import Header from '../../../components/Header/Header'
+import Prices from '../../../components/Prices/Prices'
 // import OrderFormContainer from '../../../containers/OrderFormContainer/OrderFormContainer'
+
+export const text = <div>
+  <p>Просто заполните форму ниже</p>
+  <p>или же позвоните нам на номер 356-695.</p>
+  <p>Работаем без выходных.</p>
+</div>
 
 const PageHomeDesktop = () => (
   <div className={s.container}>
@@ -29,6 +36,10 @@ const PageHomeDesktop = () => (
     <Bg img={car}>
       <Banner bgColor={'rgba(0,0,0,0.5)'} title={'Бесплатная доставка'} text={'Бесплатно по городу Сыктывкар. Возможность доставки по республике Коми'} />
     </Bg>
+    <Padding value={120} />
+    <Prices />
+    <Padding value={120} />
+    <Banner title={'Заказать очень легко'} text={text} icon={iconGalka} />
     <Padding value={120} />
     {/* <OrderFormContainer /> */}
     {/* <Padding value={120} /> */}
