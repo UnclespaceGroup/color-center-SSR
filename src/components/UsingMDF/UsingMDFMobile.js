@@ -1,37 +1,11 @@
 import React from 'react'
 import css from './UsingMDFMobile.module.scss'
 import Bg from '../Bg/Bg'
-import im1 from 'static/panel2.jpg'
-import im2 from 'static/kitchen.jpg'
-import im3 from 'static/window.jpeg'
-import im4 from 'static/shkaf.jpg'
 import LayoutMobile from '../Layout/LayoutMobile'
 import Padding from '../Padding/Padding'
 import Button from '../Button/Button'
 import { MdKeyboardArrowRight } from 'react-icons/md'
-
-const items = [
-  {
-    title: 'Покрытие стен',
-    text: <div>Не требует ровной поверхности<br /> Дополнительная тепло- и шумоизоляция</div>,
-    img: im1
-  },
-  {
-    title: 'Кухонная мебель',
-    text: '',
-    img: im2
-  },
-  {
-    title: 'Подоконники и проемы',
-    text: '',
-    img: im3
-  },
-  {
-    title: 'Шкафы и тумбы',
-    text: '',
-    img: im4
-  }
-]
+import { items } from './UsingMDF'
 
 const UsingMDF = ({ openWayOrderModal }) => (
   <>

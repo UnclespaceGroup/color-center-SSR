@@ -13,13 +13,13 @@ import Footer from '../../../components/Footer/FooterMobile'
 import Header from '../../../components/Header/HeaderMobile'
 import Prices from '../../../components/Prices/PricesMobile'
 // import OrderFormContainer from '../../../containers/OrderFormContainer/OrderFormContainer'
-
-import { text } from '../desktop/PageHomeDesktop'
 import Contacts from '../../../components/Contacts/ContactsMobile'
 import { ANCHOR_CONTACTS, ANCHOR_PRICE } from '../../../constants/ANCHORS'
 import { useDispatch } from 'react-redux'
 import { openWayOrdersModal } from '../../../actions/openWayOrdersModal'
 import ModalWayOrder from '../../../containers/ModalWayOrder/ModalWayOrderMobile'
+
+import { text, bannerGuaranty } from '../desktop/PageHomeDesktop'
 
 const PageHomeMobile = () => {
   const dispatch = useDispatch()
@@ -36,7 +36,7 @@ const PageHomeMobile = () => {
       <Padding value={60} />
       <UsingMDFMobile openWayOrderModal={openWayOrderModal} />
       <Padding value={60} />
-      <BannerMobile title={'Гарантия качества'} text={'Покраска производятся в специально оборудованном помещении в строгом соблюдении технологий'} icon={iconGalka} />
+      <BannerMobile title={'Гарантия качества'} text={bannerGuaranty} icon={iconGalka} />
       <Padding value={60} />
       <BlockColors />
       <Padding value={60} />

@@ -1,20 +1,16 @@
 import axios from 'axios'
 
-export default function () {
-  const name = 'dsfsdf'
-  const email = 'dsvllv'
-  const message = 'fnsdjnf'
+export default function sendMail ({ email, name, message }) {
   axios.post({
-    url: 'http://localhost:8060/send',
+    url: 'http://localhost:8060/send/',
     data: {
       name: name,
       email: email,
-      messsage: message
+      message: message
     }
   }).then((response) => {
     if (response.data.msg === 'success') {
       alert('Message Sent.')
-      this.resetForm()
     } else if (response.data.msg === 'fail') {
       alert('Message failed to send.')
     }

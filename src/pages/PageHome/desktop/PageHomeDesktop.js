@@ -25,6 +25,8 @@ export const text = <div>
   <p>Работаем без выходных</p>
 </div>
 
+export const bannerGuaranty = 'Покраска производится специализированным оборудованием при строгом соблюдении технологий'
+
 const PageHomeDesktop = () => {
   const dispatch = useDispatch()
   const openWayOrderModal = (open) => {
@@ -40,12 +42,12 @@ const PageHomeDesktop = () => {
       <Padding value={160} />
       <UsingMDF openWayOrderModal={openWayOrderModal} />
       <Padding value={120} />
-      <Banner title={'Гарантия качества'} text={'Покраска производится в специально оборудованном помещении в строгом соблюдении технологий'} icon={iconGalka} />
+      <Banner title={'Гарантия качества'} text={bannerGuaranty} icon={iconGalka} />
       <Padding value={120} />
       <BlockColors />
       <Padding value={120} />
       <Bg img={car}>
-        <Banner bgColor={'rgba(0,0,0,0.5)'} title={'Бесплатная доставка'} text={'Бесплатно по городу Сыктывкар<br /> Возможность доставки по Республике Коми'} />
+        <Banner bgColor={'rgba(0,0,0,0.5)'} title={'Бесплатная доставка'} text={<div>Бесплатно по городу Сыктывкар<br /> Возможность доставки по Республике Коми</div>} />
       </Bg>
       <Padding value={120} />
       <Prices id={ANCHOR_PRICE} openWayOrderModal={openWayOrderModal} />

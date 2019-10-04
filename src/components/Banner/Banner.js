@@ -8,7 +8,7 @@ const Banner = ({ title, text, icon, bgColor }) => (
     <Layout className={css.wrapper}>
       { icon && <div className={css.icon} style={{ backgroundImage: `url(${icon})` }} />}
       <div className={css.title}>{title}</div>
-      <div className={css.text}>{text}</div>
+      <div className={css.text} >{text}</div>
     </Layout>
   </div>
 )

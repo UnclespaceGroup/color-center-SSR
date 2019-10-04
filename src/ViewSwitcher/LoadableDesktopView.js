@@ -22,7 +22,7 @@ const Loading = ({ error, retry: handleRetry }) => {
         }}
       >
         <img
-          src={'https://files.anextour.com/b2c/images/anex-logo.svg'}
+          src={''}
           style={{
             height: '60px',
             left: 0,

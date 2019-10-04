@@ -6,54 +6,7 @@ import ReactTooltip from 'react-tooltip'
 import { MdInfo } from 'react-icons/md'
 import Padding from '../Padding/Padding'
 import Swiper from 'react-id-swiper'
-
-const items = [
-  {
-    title: 'Матовая эмаль',
-    features: [
-      'Срок работы <span>12 дней</span>',
-      'Гарантия <span>2 года</span>'
-    ],
-    price: '3900',
-    info: 'Доставка бесплатна',
-    text: 'МДФ панель матового цвета'
-  },
-  {
-    title: 'Глянцевая эмаль',
-    features: [
-      'Срок работы <span>12 дней</span>',
-      'Гарантия <span>2 года</span>'
-    ],
-    price: '5400',
-    text: 'Глянцевая МДФ панель'
-  },
-  {
-    title: 'Металлик',
-    features: [
-      'Срок работы <span>15 дней</span>',
-      'Гарантия <span>2 года</span>'
-    ],
-    price: '5600',
-    text: 'МДФ панель цвета металлик'
-  },
-  {
-    title: 'Перламутр',
-    features: [
-      'Срок работы <span>15 дней</span>',
-      'Гарантия <span>2 года</span>'
-    ],
-    price: '5800',
-    text: 'МДФ панель перламутрового цвета'
-  },
-  {
-    title: 'Услуги покраски',
-    features: [
-      '<span>Покраска пластиковых деталей</span>',
-      '<span>Полировка панелей</span>'
-    ],
-    price: '800'
-  }
-]
+import { items } from './Prices'
 
 const params = {
   direction: 'horizontal',

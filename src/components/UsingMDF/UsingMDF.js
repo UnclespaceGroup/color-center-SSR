@@ -2,7 +2,7 @@ import React from 'react'
 import css from './UsingMDF.module.scss'
 import Bg from '../Bg/Bg'
 import im1 from 'static/panel2.jpg'
-import im2 from 'static/kitchen.jpg'
+import im2 from 'static/666_original.jpg'
 import im3 from 'static/window.jpeg'
 import im4 from 'static/shkaf.jpg'
 import Layout from '../Layout/Layout'
@@ -11,16 +11,16 @@ import Button from '../Button/Button'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import cn from 'classnames'
 
-const items = [
-  {
-    title: 'Покрытие стен',
-    text: <div>Не требует ровной поверхности<br /> Дополнительная тепло- и шумоизоляция</div>,
-    img: im1
-  },
+export const items = [
   {
     title: 'Кухонная мебель',
     text: '',
     img: im2
+  },
+  {
+    title: 'Покрытие стен',
+    text: <div>Не требует ровной поверхности<br /> Дополнительная тепло- и шумоизоляция</div>,
+    img: im1
   },
   {
     title: 'Подоконники и проемы',

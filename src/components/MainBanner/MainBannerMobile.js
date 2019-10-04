@@ -1,18 +1,20 @@
 import React from 'react'
 import css from './MainBannerMobile.module.scss'
 import Bg from '../Bg/Bg'
-import im from 'static/katalog.jpg'
+import im from 'static/kuhni-pod-zakaz78.jpg'
+
+import { title } from './MainBanner'
 
 const MainBannerMobile = () => (
   <Bg img={im}>
     <div className={css.container}>
       <div className={css.wrapper}>
         <div className={css.content}>
-          <h1 className={css.title}>Закажите МДФ панель в Сыктывкаре</h1>
+          <h1 className={css.title}>{title}</h1>
           <ul>
-            <li>Бесплатная доставка</li>
-            <li>Точечный подбор цвета</li>
+            <li>Короткие сроки</li>
             <li>Гарантия качества</li>
+            <li>Работаем с юридическими и физ. лицами</li>
           </ul>
         </div>
       </div>

@@ -20,6 +20,7 @@ import OrderFeedbackFormDesktop from '../../components/OrderFeedbackForm/OrderFe
 import OrderFeedbackFormMobile from '../../components/OrderFeedbackForm/OrderFeedbackFormMobile'
 import SuccessFormDesktop from '../../components/SuccessForm/SuccessForm'
 import SuccessFormMobile from '../../components/SuccessForm/SuccessFormMobile'
+import sendMail from '../../utils/nodemailer'
 
 const OrderFormContainer = () => {
   const isDesktop = useSelector(state => state.toJS().IsDesktop)
@@ -43,6 +44,13 @@ const OrderFormContainer = () => {
   }
 
   const onSubmitData = () => {
+    sendMail({
+      email: 'dmitrachkovivan@gmail.com',
+      name: 'Ванёк',
+      message: `
+        ${JSON.stringify(formData)}
+      `
+    })
     setShowSuccess(true)
   }
 

@@ -4,93 +4,77 @@ const pako = require('pako')
 const axios = require('axios')
 const bodyParser = require('body-parser')
 
-// var nodemailer = require('nodemailer')
-//
-// var transport = {
-//   host: 'smtp.gmail.com',
-//   auth: {
-//     user: 'i.dmitrachkov@aic.ru',
-//     pass: 'O4SXUexX!q'
-//   }
-// }
-//
-// var transporter = nodemailer.createTransport(transport)
-//
-// transporter.verify((error, success) => {
-//   if (error) {
-//     console.log(error)
-//   } else {
-//     console.log('Server is ready to take messages')
-//   }
-// })
+var nodemailer = require('nodemailer')
+
+const passwd = 'vanya8'
+const userEmail = 'dmitrachkovivan@yandex.ru'
+
+const urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+var transport = {
+  host: 'smtp.yandex.ru',
+  port: 465,
+  auth: {
+    user: userEmail,
+    pass: passwd
+  },
+  secure: true
+}
+
+var transporter = nodemailer.createTransport(transport)
+
+transporter.verify((error, success) => {
+  if (error) {
+    console.log(error)
+  } else {
+    console.log('Server is ready to take messages')
+  }
+})
 
 module.exports = (app) => {
-  const clientUserName = process.env.REACT_APP_API_CLIENT_USERNAME
-  const clientPassword = process.env.REACT_APP_API_CLIENT_PASSWORD
-  const token = process.env.REACT_APP_SAMO_API_TOKEN
-
-  // add current IP to use API
-  axios({
-    data: `TOKEN=${token}&USERNAME=${clientUserName}&PASSWORD=${clientPassword}`,
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    method: 'post',
-    url: 'http://searchtour.anextour.com/token.ip.update.php'
-  }).catch(console.error)
-
   const proxy = httpProxy.createProxyServer()
   app.disable('x-powered-by')
   proxy.on('error', (err, req, res) => {
     console.log('Error', err.message)
     res.end()
   })
+
+  app.use(bodyParser.urlencoded({
+    extended: true
+  }))
+  app.use(bodyParser.json())
   // add proxy like this
-  // app.use('/send/', (req, res) => {
-  //   var name = 'name' // req.body.name || 'name'
-  //   var email = 'dmitrachkovivan@gmail.com' // req.body.email || 'dmitrachkovivivan@gmail.com'
-  //   var message = 'fdbsmfb' // req.body.message || 'dfdd'
-  //   var content = 'dsnndc' //`name: ${name} \n email: ${email} \n message: ${message} `
-  //
-  //   var mail = {
-  //     from: name,
-  //     to: 'dmitrachkovivan@yandex.ru',
-  //     subject: 'New Message from Contact Form',
-  //     text: content
-  //   }
-  //
-  //   transporter.sendMail(mail, (err, data) => {
-  //     if (err) {
-  //       res.json({
-  //         msg: 'fail'
-  //       })
-  //     } else {
-  //       console.log(data)
-  //       res.json({
-  //         msg: 'success'
-  //       })
-  //     }
-  //   })
-  // })
+  app.post('/send/', urlencodedParser, (req, res) => {
+    console.log('req', req.body)
+    if (!req.body || !req.body.message) {
+      console.log('message is null')
+      return
+    }
+    var name = userEmail // req.body.name || 'name'
+    var email = 'dmitrachkovivan@gmail.com'
+    var message = req.body.message
+    var content = `от пользователя${userEmail} message: ${message} `
 
-  app.use('/samo/:method', bodyParser.text(), (req, res) => {
-    const baseUrl = process.env.REACT_APP_SAMO_API_URL
+    var mail = {
+      from: name,
+      to: email,
+      subject: 'Новый заказ на сайте МДФ панелей',
+      text: content
+    }
 
-    const data = req.body
-
-    const method = req.params.method
-    const url = `${baseUrl}?samo_action=api&version=1.0&oauth_token=${token}&type=json&action=${method}`
-
-    return axios({ data, url })
-      .then(({ data }) => {
-        if (data[method]) data = data[method]
-        if ('error' in data) res.status(400)
-        res.send(data)
-      })
-      .catch((error) => {
-        const { response: { status = 400, data } = {} } = error
-        res.status(status).send(data)
-      })
+    transporter.sendMail(mail, (err, data) => {
+      if (err) {
+        console.log(err)
+        // res.json({
+        //   msg: 'fail'
+        // })
+      } else {
+        console.log(data)
+        // res.json({
+        //   msg: 'success'
+        // })
+      }
+    })
   })
 }
 

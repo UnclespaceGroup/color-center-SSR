@@ -2,16 +2,16 @@
   position: relative;
   height: 100vh;
 
-  &:before {
-    position: absolute;
-    content: 'Уют в вашем доме';
-    right: 20vw;
-    top: 30%;
-    font-weight: bold;
-    font-size: 7.2rem;
-    line-height: 8.4rem;
-    color: rgba(255, 255, 255, 0.3);
-  }
+  //&:before {
+  //  position: absolute;
+  //  content: 'Уют в вашем доме';
+  //  right: 20vw;
+  //  top: 30%;
+  //  font-weight: bold;
+  //  font-size: 7.2rem;
+  //  line-height: 8.4rem;
+  //  color: rgba(255, 255, 255, 0.3);
+  //}
 
 }
 
@@ -20,7 +20,7 @@
   left: 0;
   bottom: 0;
   width: 70%;
-  background-color: rgba(0, 0, 0, 0.38);
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 4rem 15rem 9rem 4rem;
 
   li {
@@ -39,7 +39,7 @@
 .title {
   font-weight: 300;
   font-size: 4rem;
-  line-height: 3.2rem;
+  line-height: 5.2rem;
   color: #FFFFFF;
 
   &:after {

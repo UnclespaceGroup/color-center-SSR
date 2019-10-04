@@ -4,7 +4,7 @@ import { YMaps, Map, GeolocationControl, RouteButton, Placemark } from 'react-ya
 import Layout from '../Layout/LayoutMobile'
 import Padding from '../Padding/Padding'
 import _ from 'lodash'
-import { MdPlace, MdPhone } from 'react-icons/md'
+import { contacts } from './Contacts'
 
 const mapProps = {
   width: '100%',
@@ -16,17 +16,6 @@ const mapProps = {
   }
 }
 
-export const contacts = [
-  {
-    title: 'г.Сыктывкар, Индустриальная, 1/18',
-    icon: <MdPlace />
-  },
-  {
-    title: '<p>569-884</p><p>89048686163</p>',
-    icon: <MdPhone />
-  }
-]
-
 const Contacts = ({ id }) => (
   <div className={css.container} id={id}>
     <Layout className={css.wrapper} >
@@ -37,7 +26,7 @@ const Contacts = ({ id }) => (
         _.map(contacts, (contact, key) => (
           <div key={key} className={css.item}>
             <div className={css.item__icon}>{contact.icon}</div>
-            <div className={css.item__title} dangerouslySetInnerHTML={{ __html: contact.title }} />
+            <div className={css.item__title} >{contact.title}</div>
           </div>
         ))
       }
