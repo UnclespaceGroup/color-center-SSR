@@ -22,7 +22,6 @@ import { MAIN_PHONE_LINK } from '../../../constants/USER_DATA'
 
 export const text = <div>
   <p>Просто позвоните нам на номер {MAIN_PHONE_LINK}</p>
-  <p>Работаем без выходных</p>
 </div>
 
 export const bannerGuaranty = 'Покраска производится специализированным оборудованием при строгом соблюдении технологий'
@@ -31,7 +30,7 @@ const PageHomeDesktop = () => {
   const dispatch = useDispatch()
   const openWayOrderModal = (open) => {
     dispatch(openWayOrdersModal(open))
-  }
+  } // TODO Поставить лого на хедер
   return (
     <div className={s.container}>
       <ModalWayOrder openWayOrderModal={openWayOrderModal} />

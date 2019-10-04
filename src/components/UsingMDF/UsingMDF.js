@@ -1,8 +1,8 @@
 import React from 'react'
 import css from './UsingMDF.module.scss'
 import Bg from '../Bg/Bg'
-import im1 from 'static/panel2.jpg'
-import im2 from 'static/666_original.jpg'
+import im1 from 'static/sadasdsad.jpg'
+import im2 from 'static/kitchen.jpg'
 import im3 from 'static/window.jpeg'
 import im4 from 'static/shkaf.jpg'
 import Layout from '../Layout/Layout'
@@ -18,14 +18,14 @@ export const items = [
     img: im2
   },
   {
-    title: 'Покрытие стен',
-    text: <div>Не требует ровной поверхности<br /> Дополнительная тепло- и шумоизоляция</div>,
-    img: im1
-  },
-  {
     title: 'Подоконники и проемы',
     text: '',
     img: im3
+  },
+  {
+    title: 'Покрытие стен',
+    text: '',
+    img: im1
   },
   {
     title: 'Шкафы и тумбы',
