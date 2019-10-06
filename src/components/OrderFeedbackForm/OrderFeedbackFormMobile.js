@@ -31,13 +31,14 @@ const OrderFeedbackForm = ({ onSubmit, disabled }) => (
     <Field
       component={FieldCheckbox}
       name={FIELD_AGREE}
+      type={'checkbox'}
       validate={required}
     >
       Я подтверждаю согласие на обработку персональных данных и принимаю условия рассмотрения обращений
     </Field>
     <Padding value={40} />
     <Button className={css.button} onClick={onSubmit} classname={'purple'} disabled={disabled} >Заказать</Button>
-    <Padding value={60} />
+    <Padding value={30} />
   </div>
 )
 

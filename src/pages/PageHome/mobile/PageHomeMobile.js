@@ -20,6 +20,7 @@ import { openWayOrdersModal } from '../../../actions/openWayOrdersModal'
 import ModalWayOrder from '../../../containers/ModalWayOrder/ModalWayOrderMobile'
 
 import { text, bannerGuaranty } from '../desktop/PageHomeDesktop'
+import TableFormContainer from '../../../containers/TableFormContainer/TableFormContainer'
 
 const PageHomeMobile = () => {
   const dispatch = useDispatch()
@@ -51,6 +52,9 @@ const PageHomeMobile = () => {
       {/* <OrderFormContainer /> */}
       <Padding value={0} />
       <Contacts id={ANCHOR_CONTACTS} />
+      <Padding value={60} />
+      <TableFormContainer />
+      <Padding value={60} />
       <Footer />
     </div>
   )

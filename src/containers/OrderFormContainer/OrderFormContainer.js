@@ -20,7 +20,7 @@ import OrderFeedbackFormDesktop from '../../components/OrderFeedbackForm/OrderFe
 import OrderFeedbackFormMobile from '../../components/OrderFeedbackForm/OrderFeedbackFormMobile'
 import SuccessFormDesktop from '../../components/SuccessForm/SuccessForm'
 import SuccessFormMobile from '../../components/SuccessForm/SuccessFormMobile'
-import sendMail from '../../utils/nodemailer'
+import sendMail from '../../utils/formatMessage'
 
 const OrderFormContainer = () => {
   const isDesktop = useSelector(state => state.toJS().IsDesktop)

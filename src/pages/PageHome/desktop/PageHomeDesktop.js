@@ -18,6 +18,7 @@ import ModalWayOrder from '../../../containers/ModalWayOrder/ModalWayOrder'
 import { useDispatch } from 'react-redux'
 import { openWayOrdersModal } from '../../../actions/openWayOrdersModal'
 import { MAIN_PHONE_LINK } from '../../../constants/USER_DATA'
+import TableFormContainer from '../../../containers/TableFormContainer/TableFormContainer'
 // import OrderFormContainer from '../../../containers/OrderFormContainer/OrderFormContainer'
 
 export const text = <div>
@@ -55,8 +56,9 @@ const PageHomeDesktop = () => {
       <Padding value={120} />
       <Contacts id={ANCHOR_CONTACTS} />
       <Padding value={120} />
+      <TableFormContainer />
       {/* <OrderFormContainer /> */}
-      {/* <Padding value={120} /> */}
+      <Padding value={120} />
       <Footer />
     </div>
   )

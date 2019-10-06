@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import css from './FieldCheckbox.module.scss'
 
-const FieldCheckbox = ({ children, input }) => (
+const FieldCheckbox = ({ children, input, ...props }) => (
   <label className={css.container}>
-    <input type={'checkbox'} {...input} />
+    <input {...input} {...props} value={input.value || false} />
     <span>{children}</span>
   </label>
 )

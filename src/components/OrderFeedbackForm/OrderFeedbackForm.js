@@ -29,6 +29,7 @@ const OrderFeedbackForm = ({ onSubmit, disabled }) => (
     />
     <Padding value={24} />
     <Field
+      type={'checkbox'}
       component={FieldCheckbox}
       name={FIELD_AGREE}
       validate={required}
@@ -37,7 +38,7 @@ const OrderFeedbackForm = ({ onSubmit, disabled }) => (
     </Field>
     <Padding value={40} />
     <Button className={css.button} onClick={onSubmit} classname={'purple'} disabled={disabled} >Заказать</Button>
-    <Padding value={280} />
+    <Padding value={80} />
   </div>
 )
 

@@ -1,0 +1,72 @@
+.container {
+  position: relative;
+  font-size: 2.4rem;
+  line-height: 2.8rem;
+  height: 7rem;
+
+
+  input {
+    width: 100%;
+    font-size: inherit;
+    line-height: inherit;
+    color: #000000;
+    padding: 2rem 4rem 2rem 0;
+    transition: all 200ms ease-in;
+
+
+    &:focus {
+      box-shadow: 0 0 1rem #9B51E0;
+
+      & + .fake {
+        & .measurement {
+          position: absolute;
+          right: 1rem;
+          top: 2.6rem;
+        }
+      }
+    }
+  }
+}
+
+.error {
+  box-shadow: 0 0 1rem #e00b2c;
+
+  input:focus {
+    box-shadow: none !important;
+  }
+}
+
+.hide {
+  input {
+    padding: 2rem 1rem 2rem 0!important;
+  }
+}
+
+.text {
+  font-size: 1.6rem;
+}
+
+.measurement {
+  pointer-events: none;
+  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  color: #000000;
+  margin-left: 1rem;
+}
+
+.fake {
+  white-space: nowrap;
+  padding: 2rem 4rem 2rem 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+
+  &__value {
+    display: inline-block;
+    opacity: 0;
+  }
+}

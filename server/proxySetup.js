@@ -53,26 +53,26 @@ module.exports = (app) => {
     var name = userEmail // req.body.name || 'name'
     var email = 'dmitrachkovivan@gmail.com'
     var message = req.body.message
-    var content = `от пользователя${userEmail} message: ${message} `
+    var title = req.body.title
+    var UserData = req.body.user
 
     var mail = {
       from: name,
       to: email,
-      subject: 'Новый заказ на сайте МДФ панелей',
-      text: content
+      subject: title,
+      text: message + UserData
     }
 
     transporter.sendMail(mail, (err, data) => {
       if (err) {
         console.log(err)
-        // res.json({
-        //   msg: 'fail'
-        // })
+        res.json({
+          status: 'fail'
+        })
       } else {
-        console.log(data)
-        // res.json({
-        //   msg: 'success'
-        // })
+        res.json({
+          status: 'OK'
+        })
       }
     })
   })

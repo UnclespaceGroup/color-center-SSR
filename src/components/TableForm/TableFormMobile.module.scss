@@ -1,0 +1,129 @@
+.container {
+  padding: 3rem 0;
+  margin-top: 5.8rem;
+  transition: all 300ms ease-in;
+
+  &__empty {
+    composes: container;
+    opacity: 0;
+  }
+
+  h3 {
+    font-size: 3.6rem;
+    font-weight: 400;
+    line-height: 4.2rem;
+    color: #000000;
+  }
+
+  table {
+    margin-top: 3rem;
+    width: 100%;
+    border-spacing: 0;
+  }
+
+  th {
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+    font-weight: 400;
+    color: #000000;
+    text-align: left;
+    padding-bottom: 1rem;
+    border-bottom: solid 1px #828282;
+
+    span {
+      font-weight: 300;
+    }
+  }
+
+  td {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    color: #4F4F4F;
+    border-bottom: solid 1px #828282;
+
+    span {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.label {
+  font-size: 1.4rem;
+  margin: 0rem 0 0.5rem;
+  padding-top: 1rem;
+  border-top: solid 1px #c1c1c1;
+}
+
+.add {
+  margin-top: 5rem;
+  color: #9B51E0;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  transition: all 200ms ease-in;
+  border: solid 1px #9B51E0;
+  border-radius: 0.4rem;
+
+
+  &:hover {
+    background-color: #9B51E0;
+    color: white;
+  }
+}
+
+.block {
+  margin-bottom: 5rem;
+}
+
+
+.text {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.double {
+  display: flex;
+  position: relative;
+
+  &__separator {
+    margin: 2rem 2rem 0;
+  }
+}
+
+.close {
+  cursor: pointer;
+  transition: all 200ms ease-in;
+
+  &:hover {
+    color: #9B51E0;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px #cdcdcd;
+  border-top: solid 1px #cdcdcd;
+  padding: 2rem 0;
+}
+
+.price {
+  padding-right: 1rem;
+  font-size: 1.4rem;
+
+  span {
+    display: block;
+    font-size: 2.8rem;
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+}
+
+.error {
+  color: red;
+  font-size: 1.6rem;
+  margin: 1rem 0;
+}
