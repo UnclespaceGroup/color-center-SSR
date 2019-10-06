@@ -16,6 +16,7 @@ import {
   FIELD_THICKNESS,
   FIELD_WIDTH, FIELDS_PARAMS
 } from '../../constants/FORM_DATA'
+import { createPrice } from '../../utils/formUtills'
 
 const TableForm = ({ values, onSubmit, form: { mutators: { push, pop } }, submitFailed, pushNew, ...props }) => {
   useMemo(() => {
@@ -93,7 +94,7 @@ const TableForm = ({ values, onSubmit, form: { mutators: { push, pop } }, submit
                   />
                 </div>
                 <div className={css.footer}>
-                  <div className={css.price}><div>Стоимость</div> <span>2500</span></div>
+                  <div className={css.price}><div>Стоимость</div> <span>{createPrice(fields.value[index])} ₽</span></div>
                   <Button className={css.close} classname={'purple'} onClick={() => fields.remove(index)}>
                   Стереть
                   </Button>

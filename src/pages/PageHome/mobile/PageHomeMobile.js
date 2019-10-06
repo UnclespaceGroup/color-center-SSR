@@ -12,7 +12,6 @@ import Bg from '../../../components/Bg/Bg'
 import Footer from '../../../components/Footer/FooterMobile'
 import Header from '../../../components/Header/HeaderMobile'
 import Prices from '../../../components/Prices/PricesMobile'
-// import OrderFormContainer from '../../../containers/OrderFormContainer/OrderFormContainer'
 import Contacts from '../../../components/Contacts/ContactsMobile'
 import { ANCHOR_CONTACTS, ANCHOR_FORM, ANCHOR_PRICE } from '../../../constants/ANCHORS'
 import { useDispatch } from 'react-redux'
@@ -20,7 +19,7 @@ import { openWayOrdersModal } from '../../../actions/openWayOrdersModal'
 import ModalWayOrder from '../../../containers/ModalWayOrder/ModalWayOrderMobile'
 
 import { text, bannerGuaranty } from '../desktop/PageHomeDesktop'
-import TableFormContainer from '../../../containers/TableFormContainer/TableFormContainer'
+import TableFormContainer from 'containers/TableFormContainer/TableFormContainer'
 
 const PageHomeMobile = () => {
   const dispatch = useDispatch()
@@ -49,10 +48,8 @@ const PageHomeMobile = () => {
       <Padding value={60} />
       <BannerMobile title={'Заказать очень легко'} text={text} icon={iconGalka} />
       <Padding value={60} />
-      {/* <OrderFormContainer /> */}
-      <Padding value={0} />
       <Contacts id={ANCHOR_CONTACTS} />
-      <Padding value={60} />
+      <Padding value={20} />
       <TableFormContainer id={ANCHOR_FORM} />
       <Padding value={60} />
       <Footer />

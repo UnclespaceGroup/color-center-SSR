@@ -1,6 +1,6 @@
 import React from 'react'
 import cn from 'classnames'
-import css from './FieldInput.module.scss'
+import css from './FieldInputMobile.module.scss'
 
 const FieldInput = ({ input, label, text, value, caption, meta, ...props }) => {
   const error = (meta.touched && meta.error) ? meta.error : null

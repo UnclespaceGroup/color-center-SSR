@@ -20,6 +20,18 @@ export const FIELD_NAME = 'FIELD_NAME'
 export const FIELD_PHONE = 'FIELD_PHONE'
 export const FIELD_AGREE = 'FIELD_AGREE'
 
+export const SHADES = {
+  mat: 'Матовый',
+  gl: 'Глянцевый',
+  pm: 'Полуматовый'
+}
+
+export const PRICES = {
+  [SHADES.mat]: 3900,
+  [SHADES.gl]: 5600,
+  [SHADES.pm]: 5600
+}
+
 export const FIELDS_PARAMS = [
   {
     width: '',
@@ -76,16 +88,16 @@ export const FIELDS_PARAMS = [
     width: '15rem',
     placeholder: 'Глянцевый',
     options: [{
-      value: 'Глянцевый',
-      label: 'Глянцевый'
+      value: SHADES.gl,
+      label: SHADES.gl
     },
     {
-      value: 'Матовый',
-      label: 'Матовый'
+      value: SHADES.mat,
+      label: SHADES.mat
     },
     {
-      value: 'Полу-Матовый',
-      label: 'Полу-матовый'
+      value: SHADES.pm,
+      label: SHADES.pm
     }]
   }
 ]

@@ -19,7 +19,6 @@ import { useDispatch } from 'react-redux'
 import { openWayOrdersModal } from '../../../actions/openWayOrdersModal'
 import { MAIN_PHONE_LONG_LINK } from '../../../constants/USER_DATA'
 import TableFormContainer from '../../../containers/TableFormContainer/TableFormContainer'
-// import OrderFormContainer from '../../../containers/OrderFormContainer/OrderFormContainer'
 
 export const text = <div>
   <p>Просто позвоните нам на номер {MAIN_PHONE_LONG_LINK}</p>
@@ -58,7 +57,6 @@ const PageHomeDesktop = () => {
       <Contacts id={ANCHOR_CONTACTS} />
       <Padding value={120} />
       <TableFormContainer id={ANCHOR_FORM} />
-      {/* <OrderFormContainer /> */}
       <Padding value={120} />
       <Footer />
     </div>

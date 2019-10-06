@@ -17,8 +17,9 @@ import {
   FIELD_THICKNESS,
   FIELD_WIDTH, FIELDS_PARAMS
 } from '../../constants/FORM_DATA'
+import { createPrice } from '../../utils/formUtills'
 
-const TableForm = ({ values, dirty, onSubmit, hasValidationErrors, onButtonClick, form: { mutators: { push, pop } }, pushNew, ...props }) => {
+const TableForm = ({ values, dirty, onSubmit, hasValidationErrors, onButtonClick, form: { mutators: { push, pop } }, pushNew, price, ...props }) => {
   useMemo(() => {
     if (!Object.keys(values).length) push(FORM_TABLE_ORDER, undefined)
   }, [values])
@@ -47,7 +48,7 @@ const TableForm = ({ values, dirty, onSubmit, hasValidationErrors, onButtonClick
           </thead>
           <tbody>
             <FieldArray name={FORM_TABLE_ORDER} >
-              {({ fields }) =>
+              {({ fields }) => console.log(fields) ||
                 fields.map((item, index) => (
                   <tr key={index}>
                     <td >
@@ -103,7 +104,7 @@ const TableForm = ({ values, dirty, onSubmit, hasValidationErrors, onButtonClick
                         {...FIELDS_PARAMS[6]}
                       />
                     </td>
-                    <td >2500</td>
+                    <td >{createPrice(fields.value[index])} ₽</td>
                     <td><div className={css.close} onClick={() => fields.remove(index)}>
                       <MdClose />
                     </div></td>
