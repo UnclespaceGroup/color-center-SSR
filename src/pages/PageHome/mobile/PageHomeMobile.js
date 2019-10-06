@@ -14,7 +14,7 @@ import Header from '../../../components/Header/HeaderMobile'
 import Prices from '../../../components/Prices/PricesMobile'
 // import OrderFormContainer from '../../../containers/OrderFormContainer/OrderFormContainer'
 import Contacts from '../../../components/Contacts/ContactsMobile'
-import { ANCHOR_CONTACTS, ANCHOR_PRICE } from '../../../constants/ANCHORS'
+import { ANCHOR_CONTACTS, ANCHOR_FORM, ANCHOR_PRICE } from '../../../constants/ANCHORS'
 import { useDispatch } from 'react-redux'
 import { openWayOrdersModal } from '../../../actions/openWayOrdersModal'
 import ModalWayOrder from '../../../containers/ModalWayOrder/ModalWayOrderMobile'
@@ -53,7 +53,7 @@ const PageHomeMobile = () => {
       <Padding value={0} />
       <Contacts id={ANCHOR_CONTACTS} />
       <Padding value={60} />
-      <TableFormContainer />
+      <TableFormContainer id={ANCHOR_FORM} />
       <Padding value={60} />
       <Footer />
     </div>

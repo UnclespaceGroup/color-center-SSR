@@ -13,16 +13,17 @@ import Footer from '../../../components/Footer/Footer'
 import Header from '../../../components/Header/Header'
 import Prices from '../../../components/Prices/Prices'
 import Contacts from '../../../components/Contacts/Contacts'
-import { ANCHOR_CONTACTS, ANCHOR_PRICE } from '../../../constants/ANCHORS'
+import { ANCHOR_CONTACTS, ANCHOR_FORM, ANCHOR_PRICE } from '../../../constants/ANCHORS'
 import ModalWayOrder from '../../../containers/ModalWayOrder/ModalWayOrder'
 import { useDispatch } from 'react-redux'
 import { openWayOrdersModal } from '../../../actions/openWayOrdersModal'
-import { MAIN_PHONE_LINK } from '../../../constants/USER_DATA'
+import { MAIN_PHONE_LONG_LINK } from '../../../constants/USER_DATA'
 import TableFormContainer from '../../../containers/TableFormContainer/TableFormContainer'
 // import OrderFormContainer from '../../../containers/OrderFormContainer/OrderFormContainer'
 
 export const text = <div>
-  <p>Просто позвоните нам на номер {MAIN_PHONE_LINK}</p>
+  <p>Просто позвоните нам на номер {MAIN_PHONE_LONG_LINK}</p>
+  <p>Или заполните форму ниже</p>
 </div>
 
 export const bannerGuaranty = 'Покраска производится специализированным оборудованием при строгом соблюдении технологий'
@@ -56,7 +57,7 @@ const PageHomeDesktop = () => {
       <Padding value={120} />
       <Contacts id={ANCHOR_CONTACTS} />
       <Padding value={120} />
-      <TableFormContainer />
+      <TableFormContainer id={ANCHOR_FORM} />
       {/* <OrderFormContainer /> */}
       <Padding value={120} />
       <Footer />

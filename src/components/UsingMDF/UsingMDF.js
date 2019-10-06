@@ -10,6 +10,8 @@ import Padding from '../Padding/Padding'
 import Button from '../Button/Button'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import cn from 'classnames'
+import { ANCHOR_FORM } from '../../constants/ANCHORS'
+import { scrollWindowTo } from '../../utils/scrollWindowTo'
 
 export const items = [
   {
@@ -48,7 +50,7 @@ const UsingMDF = ({ openWayOrderModal }) => (
               <div className={css.title}>{item.title}</div>
               <div className={css.text}>{item.text}</div>
             </div>
-            <div className={css.button}><Button classname={'inline'} onClick={() => { openWayOrderModal(true) }} >Узнать больше<MdKeyboardArrowRight /></Button></div>
+            <div className={css.button}><Button classname={'inline'} onClick={() => { scrollWindowTo(ANCHOR_FORM) }} >Заказать<MdKeyboardArrowRight /></Button></div>
           </Bg>
         ))
       }

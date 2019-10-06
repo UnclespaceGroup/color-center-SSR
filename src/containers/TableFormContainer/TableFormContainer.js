@@ -24,7 +24,7 @@ import ErrorPopupMobile from '../../components/ErrorPopup/ErrorPopupMobile'
 import moment from 'moment'
 import { formatPushValues } from '../../utils/formUtills'
 
-const TableFormContainer = () => {
+const TableFormContainer = ({ id }) => {
   // Определяем, мобильный или десктопный компонент рисовать
   const isDesktop = useSelector(state => state.toJS().IsDesktop)
   const ModalOrder = isDesktop ? ModalOrderDesktop : ModalOrderMobile
@@ -73,7 +73,7 @@ const TableFormContainer = () => {
   let clearForm = () => {}
 
   return (
-    <>
+    <div id={id}>
       <Form
         form={FORM_TABLE_ORDER}
         mutators={{
@@ -127,7 +127,7 @@ const TableFormContainer = () => {
         <SuccessForm onClose={() => setShowSuccess(false)} />
       </ModalOrder>
       <ErrorPopup isOpen={error} onClose={() => { setError(false) }} />
-    </>
+    </div>
   )
 }
 

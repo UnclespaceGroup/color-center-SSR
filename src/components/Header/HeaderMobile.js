@@ -4,14 +4,14 @@ import Collapse from 'react-collapse'
 import { MdMenu, MdClose } from 'react-icons/md'
 import { MAIN_PHONE, MAIN_PHONE_LONG } from '../../constants/USER_DATA'
 import LayoutMobile from '../Layout/LayoutMobile'
-import { scrollTo } from '../../utils/scrollTo'
+import { scrollWindowTo } from '../../utils/scrollWindowTo'
 import { ANCHOR_CONTACTS, ANCHOR_PRICE } from '../../constants/ANCHORS'
 
 const HeaderMobile = ({ openWayOrderModal }) => {
   const [ isOpen, setIsOpen ] = useState(false)
   const click = (to) => () => {
     setIsOpen(false)
-    scrollTo(to)
+    scrollWindowTo(to)
   }
   return (
     <>
