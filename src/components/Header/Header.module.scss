@@ -3,7 +3,12 @@
   position: fixed;
   z-index: 100;
   background: rgba(255,255,255,0.8);
-  padding: 2rem 7rem 2rem;
+  padding: 1.5rem 7rem;
+  transition: all 200ms ease-in;
+}
+
+.open {
+  background-color: white;
 }
 
 .logo {
@@ -65,4 +70,65 @@
     background: url("../../static/svg/phone.svg") no-repeat center;
     background-size: contain;
   }
+}
+
+.burger {
+  cursor: pointer;
+  margin-left: 2rem;
+  transition: all 200ms ease-in;
+
+  &:hover {
+    color: orange;
+  }
+
+  svg {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.content {
+  width: 100%;
+  padding: 5rem 0;
+  display: flex;
+  align-items: flex-end;
+
+  &__menu {
+    width: 50%;
+  }
+
+  &__item {
+    cursor: pointer;
+    font-size: 2rem;
+    line-height: 2.3rem;
+    color: #000000;
+    margin-right: 5rem;
+    transition: all 200ms ease-in;
+    margin-bottom: 2rem;
+
+    &:hover {
+      color: orange;
+    }
+  }
+
+  .label {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .phone {
+  }
+
+  &__side {
+    width: 50%;
+  }
+}
+
+.back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 }

@@ -4,6 +4,18 @@
   width: 12rem;
   display: flex;
   justify-content: space-between;
+
+  svg {
+    color: white;
+    //width: 4rem;
+    //height: 4rem;
+    transition: all 200ms ease-in;
+
+    &:hover {
+      color: orange;
+    }
+  }
+
   a {
     width: 3rem;
     height: 3rem;
@@ -15,8 +27,5 @@
   }
   .wa {
     background-image: url("../../static/wa.png");
-  }
-  .vk {
-    background-image: url("../../static/vk.png");
   }
 }

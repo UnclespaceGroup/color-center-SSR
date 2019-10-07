@@ -13,7 +13,7 @@ import Footer from '../../../components/Footer/Footer'
 import Header from '../../../components/Header/Header'
 import Prices from '../../../components/Prices/Prices'
 import Contacts from '../../../components/Contacts/Contacts'
-import { ANCHOR_CONTACTS, ANCHOR_FORM, ANCHOR_PRICE } from '../../../constants/ANCHORS'
+import { ANCHOR_CONTACTS, ANCHOR_FORM, ANCHOR_PRICE, ANCHOR_USING_MDF } from '../../../constants/ANCHORS'
 import ModalWayOrder from '../../../containers/ModalWayOrder/ModalWayOrder'
 import { useDispatch } from 'react-redux'
 import { openWayOrdersModal } from '../../../actions/openWayOrdersModal'
@@ -40,7 +40,7 @@ const PageHomeDesktop = () => {
       <Padding value={120} />
       <Advantages />
       <Padding value={160} />
-      <UsingMDF openWayOrderModal={openWayOrderModal} />
+      <UsingMDF id={ANCHOR_USING_MDF} openWayOrderModal={openWayOrderModal} />
       <Padding value={120} />
       <Banner title={'Гарантия качества'} text={bannerGuaranty} icon={iconGalka} />
       <Padding value={120} />

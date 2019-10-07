@@ -36,8 +36,8 @@ export const items = [
   }
 ]
 
-const UsingMDF = ({ openWayOrderModal }) => (
-  <>
+const UsingMDF = ({ id }) => (
+  <div id={id}>
     <Layout>
       <h2>Применение МДФ панелей</h2>
       <Padding value={80} />
@@ -55,7 +55,7 @@ const UsingMDF = ({ openWayOrderModal }) => (
         ))
       }
     </div>
-  </>
+  </div>
 )
 
 export default React.memo(UsingMDF)

@@ -26,6 +26,11 @@ export const SHADES = {
   pm: 'Полуматовый'
 }
 
+export const DEFAULT_VALUES = {
+  [FIELD_RADIUS]: '10мм',
+  [FIELD_COLOR_SHADE]: SHADES.gl
+}
+
 export const PRICES = {
   [SHADES.mat]: 3900,
   [SHADES.gl]: 5600,
@@ -63,7 +68,7 @@ export const FIELDS_PARAMS = [
   },
   {
     width: '12rem',
-    placeholder: '10мм',
+    placeholder: DEFAULT_VALUES[FIELD_RADIUS],
     options: [
       {
         value: '10мм',
@@ -86,7 +91,7 @@ export const FIELDS_PARAMS = [
   },
   {
     width: '15rem',
-    placeholder: 'Глянцевый',
+    placeholder: DEFAULT_VALUES[FIELD_COLOR_SHADE],
     options: [{
       value: SHADES.gl,
       label: SHADES.gl

@@ -12,7 +12,6 @@ const FieldInlineSelect = ({ input, label, text, placeholder, value, options, me
           label: input.value
         }}
         onChange={val => {
-          console.log(val)
           input.onChange(val.value)
         }}
         options={options}
