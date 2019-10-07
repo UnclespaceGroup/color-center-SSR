@@ -5,6 +5,8 @@ import Layout from '../Layout/Layout'
 import ReactTooltip from 'react-tooltip'
 import { MdInfo } from 'react-icons/md'
 import Padding from '../Padding/Padding'
+import { scrollWindowTo } from '../../utils/scrollWindowTo'
+import { ANCHOR_FORM } from '../../constants/ANCHORS'
 
 export const items = [
   {
@@ -85,7 +87,7 @@ const Price = ({ title, price, features = [], mini, tooltip, text, openWayOrderM
     </div>
     <div className={css.footer}>
       <div className={css.price}>{price} <span>руб./м<sup>2</sup></span></div>
-      <Button className={css.btn} onClick={() => { openWayOrderModal(true) }} classname={'purple'}>Заказать</Button>
+      <Button className={css.btn} onClick={() => { scrollWindowTo(ANCHOR_FORM) }} classname={'purple'}>Заказать</Button>
     </div>
   </div>
 )

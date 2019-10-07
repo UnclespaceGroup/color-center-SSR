@@ -8,7 +8,7 @@ import { MdPlace, MdPhone, MdAccessTime } from 'react-icons/md'
 import { MAIN_PHONE_LONG_LINK } from '../../constants/USER_DATA'
 
 const mapProps = {
-  width: '50%',
+  width: '100%',
   height: '50rem',
   options: { },
   state: {
@@ -34,13 +34,15 @@ export const contacts = [
 
 const Contacts = ({ id }) => (
   <Layout className={css.container} id={id}>
-    <YMaps>
-      <Map {...mapProps} >
-        <GeolocationControl options={{ float: 'left' }} />
-        <RouteButton options={{ float: 'right' }} />
-        <Placemark options={{ preset: 'islands#violetRepairShopCircleIcon' }} geometry={[61.680429561768634, 50.800528999999926]} />
-      </Map>
-    </YMaps>
+    <div className={css.map}>
+      <YMaps>
+        <Map {...mapProps} >
+          <GeolocationControl options={{ float: 'left' }} />
+          <RouteButton options={{ float: 'right' }} />
+          <Placemark options={{ preset: 'islands#violetRepairShopCircleIcon' }} geometry={[61.680429561768634, 50.800528999999926]} />
+        </Map>
+      </YMaps>
+    </div>
     <div className={css.wrapper} >
       <h3>Контактная информация</h3>
       <Padding value={32} />

@@ -31,13 +31,15 @@ const Contacts = ({ id }) => (
         ))
       }
     </Layout>
-    <YMaps>
-      <Map {...mapProps} >
-        <GeolocationControl options={{ float: 'left' }} />
-        <RouteButton options={{ float: 'right' }} />
-        <Placemark options={{ preset: 'islands#violetRepairShopCircleIcon' }} geometry={[61.680429561768634, 50.800528999999926]} />
-      </Map>
-    </YMaps>
+    <div className={css.map}>
+      <YMaps>
+        <Map {...mapProps} >
+          <GeolocationControl options={{ float: 'left' }} />
+          <RouteButton options={{ float: 'right' }} />
+          <Placemark options={{ preset: 'islands#violetRepairShopCircleIcon' }} geometry={[61.680429561768634, 50.800528999999926]} />
+        </Map>
+      </YMaps>
+    </div>
   </div>
 )
 

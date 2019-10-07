@@ -1,0 +1,22 @@
+.socials {
+  bottom: 12rem;
+  height: 3rem;
+  width: 12rem;
+  display: flex;
+  justify-content: space-between;
+  a {
+    width: 3rem;
+    height: 3rem;
+    background: no-repeat center;
+    background-size: contain;
+  }
+  .viber {
+    background-image: url("../../static/viber.png");
+  }
+  .wa {
+    background-image: url("../../static/wa.png");
+  }
+  .vk {
+    background-image: url("../../static/vk.png");
+  }
+}

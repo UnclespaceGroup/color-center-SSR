@@ -6,6 +6,7 @@ import Button from '../Button/Button'
 import { scrollWindowTo } from '../../utils/scrollWindowTo'
 import { ANCHOR_FORM } from '../../constants/ANCHORS'
 import Padding from '../Padding/Padding'
+import SocialIcons from '../SocialIcons/SocialIcons'
 
 export const title = 'Продажа крашенных МДФ фасадов собственного производства в Сыктывкаре'
 
@@ -24,6 +25,7 @@ const MainBanner = () => (
           <Button className={css.btn} classname={'inline'} onClick={() => { scrollWindowTo(ANCHOR_FORM) }}>Заказать</Button>
         </div>
       </div>
+      <div className={css.social}><SocialIcons /></div>
     </div>
   </Bg>
 )

@@ -24,7 +24,7 @@ const UsingMDF = ({ openWayOrderModal }) => (
                 <div className={css.title}>{item.title}</div>
                 <div className={css.text}>{item.text}</div>
               </div>
-              <div className={css.button}><Button classname={'inline'} onClick={() => { scrollWindowTo(ANCHOR_FORM) }} >Узнать больше<MdKeyboardArrowRight /></Button></div>
+              <div className={css.button}><Button classname={'inline'} onClick={() => { scrollWindowTo(ANCHOR_FORM) }} >Заказать<MdKeyboardArrowRight /></Button></div>
             </div>
           </Bg>
         ))

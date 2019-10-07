@@ -2,7 +2,7 @@
   width: 100vw;
   position: fixed;
   z-index: 100;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,1);
 }
 
 .logo {
@@ -50,7 +50,6 @@
   }
 }
 .wrapper {
-  border-top: solid 1px dimgrey;
   padding: 3rem 2rem;
   background-color: white;
 }
@@ -60,7 +59,7 @@
   font-size: 2rem;
   line-height: 2.3rem;
   color: #000000;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .phone {

@@ -28,7 +28,7 @@ const TableForm = ({ values, onSubmit, form: { mutators: { push, pop } }, submit
         <h2>Таблица заказа</h2>
         <Padding value={20} />
         <div className={css.text} >
-        Заполните теблицу ниже и нажмите сделать заказ
+          Заполните таблицу и нажмите сделать заказ
         </div>
         <Padding value={20} />
         <FieldArray name={FORM_TABLE_ORDER} >

@@ -55,7 +55,7 @@ const PageHomeDesktop = () => {
       <Banner title={'Заказать очень легко'} text={text} />
       <Padding value={120} />
       <Contacts id={ANCHOR_CONTACTS} />
-      <Padding value={120} />
+      <Padding value={80} />
       <TableFormContainer id={ANCHOR_FORM} />
       <Padding value={120} />
       <Footer />

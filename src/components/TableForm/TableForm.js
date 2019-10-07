@@ -29,7 +29,7 @@ const TableForm = ({ values, dirty, onSubmit, hasValidationErrors, onButtonClick
         <h3>Таблица заказа</h3>
         <Padding value={20} />
         <div className={css.text} >
-        Заполните теблицу ниже и нажмите сделать заказ
+        Заполните таблицу и нажмите сделать заказ
         </div>
         <Padding value={20} />
         <table>
@@ -120,6 +120,7 @@ const TableForm = ({ values, dirty, onSubmit, hasValidationErrors, onButtonClick
         <Padding value={24} />
         <Button classname={'purple'} onClick={onSubmit} >Сделать заказ</Button>
       </Layout>
+      <Padding value={20} />
     </div>
   )
 }

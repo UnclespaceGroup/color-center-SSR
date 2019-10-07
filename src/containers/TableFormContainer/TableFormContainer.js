@@ -65,8 +65,11 @@ const TableFormContainer = ({ id }) => {
         setError(true)
         console.log('Ошибка запроса', res.data)
       }
-    }
-    )
+    })
+      .catch(e => {
+        console.log(e)
+        setError(true)
+      })
   }
 
   // Для очистки формы из вне

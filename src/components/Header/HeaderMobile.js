@@ -5,7 +5,7 @@ import { MdMenu, MdClose } from 'react-icons/md'
 import { MAIN_PHONE, MAIN_PHONE_LONG } from '../../constants/USER_DATA'
 import LayoutMobile from '../Layout/LayoutMobile'
 import { scrollWindowTo } from '../../utils/scrollWindowTo'
-import { ANCHOR_CONTACTS, ANCHOR_PRICE } from '../../constants/ANCHORS'
+import { ANCHOR_CONTACTS, ANCHOR_FORM, ANCHOR_PRICE } from '../../constants/ANCHORS'
 
 const HeaderMobile = ({ openWayOrderModal }) => {
   const [ isOpen, setIsOpen ] = useState(false)
@@ -32,7 +32,11 @@ const HeaderMobile = ({ openWayOrderModal }) => {
             <div className={css.item} onClick={() => {
               setIsOpen(false)
               openWayOrderModal(true)
-            }} >Как заказать</div>
+            }} >Способы заказа</div>
+            <div className={css.item} onClick={() => {
+              setIsOpen(false)
+              scrollWindowTo(ANCHOR_FORM)
+            }} >Сделать заказ</div>
             <a className={css.phone} href={`tel:${MAIN_PHONE_LONG}`}>{MAIN_PHONE_LONG}</a>
           </LayoutMobile>
         </Collapse>
