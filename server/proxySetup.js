@@ -1,7 +1,6 @@
 const httpProxy = require('http-proxy')
 const crypto = require('crypto')
 const pako = require('pako')
-const axios = require('axios')
 const bodyParser = require('body-parser')
 
 var nodemailer = require('nodemailer')
@@ -48,6 +47,9 @@ module.exports = (app) => {
     console.log('req', req.body)
     if (!req.body || !req.body.message) {
       console.log('message is null')
+      res.json({
+        status: 'fail'
+      })
       return
     }
     var name = userEmail // req.body.name || 'name'

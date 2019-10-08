@@ -27,7 +27,7 @@ export const SHADES = {
 }
 
 export const DEFAULT_VALUES = {
-  [FIELD_RADIUS]: '10мм',
+  [FIELD_RADIUS]: '1мм',
   [FIELD_COLOR_SHADE]: SHADES.gl
 }
 
@@ -71,16 +71,40 @@ export const FIELDS_PARAMS = [
     placeholder: DEFAULT_VALUES[FIELD_RADIUS],
     options: [
       {
-        value: '10мм',
-        label: '10мм'
+        value: '1мм',
+        label: '1мм'
       },
       {
-        value: '20мм',
-        label: '20мм'
+        value: '2мм',
+        label: '2мм'
       },
       {
-        value: '30мм',
-        label: '30мм'
+        value: '3мм',
+        label: '3мм'
+      },
+      {
+        value: '4мм',
+        label: '4мм'
+      },
+      {
+        value: '5мм',
+        label: '5мм'
+      },
+      {
+        value: '6мм',
+        label: '6мм'
+      },
+      {
+        value: '7мм',
+        label: '7мм'
+      },
+      {
+        value: '8мм',
+        label: '8мм'
+      },
+      {
+        value: '9мм',
+        label: '9мм'
       }
     ]
   },

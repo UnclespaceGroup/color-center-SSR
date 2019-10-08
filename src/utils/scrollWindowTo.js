@@ -7,8 +7,15 @@ export const scrollWindowTo = (id) => {
   const bodyRect = document.body.getBoundingClientRect()
   const rect = element.getBoundingClientRect()
   const offset = rect.top - bodyRect.top
-  window.scrollTo({
-    top: offset - 100,
-    behavior: 'smooth'
-  })
+
+  const supportsNativeSmoothScroll = 'scrollBehavior' in document.documentElement.style
+
+  if (supportsNativeSmoothScroll) {
+    window.scrollTo({
+      top: offset - 100,
+      behavior: 'smooth'
+    })
+  } else {
+    window.scrollTo(0, offset)
+  }
 }
