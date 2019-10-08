@@ -67,7 +67,6 @@ const TableForm = ({ values, dirty, onSubmit, hasValidationErrors, onButtonClick
                           {...FIELDS_PARAMS[1]}
                         />
                       </div>
-                      <div className={css.double__separator}>x</div>
                     </td>
                     <td >
                       <Field

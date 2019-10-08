@@ -1,8 +1,8 @@
 .container {
   position: relative;
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   line-height: 2.8rem;
-  height: 7rem;
+  height: 6rem;
 
 
   input {
@@ -10,7 +10,7 @@
     font-size: inherit;
     line-height: inherit;
     color: #000000;
-    padding: 2rem 4rem 2rem 0;
+    height: 100%;
     transition: all 200ms ease-in;
     background-color: transparent;
 
@@ -22,11 +22,15 @@
         & .measurement {
           position: absolute;
           right: 1rem;
-          top: 2.6rem;
+          top: 2rem;
         }
       }
     }
   }
+}
+
+.text {
+  font-size: 1.4rem;
 }
 
 .error {
@@ -43,14 +47,10 @@
   }
 }
 
-.text {
-  font-size: 1.6rem;
-}
-
-.measurement {
+span.measurement {
   pointer-events: none;
   font-weight: 300;
-  font-size: 1.8rem;
+  font-size: 1.4rem!important;
   line-height: 2.1rem;
   color: #000000;
   margin-left: 1rem;
@@ -58,7 +58,7 @@
 
 .fake {
   white-space: nowrap;
-  padding: 2rem 4rem 2rem 0;
+  padding: 1.6rem 4rem 1rem 0;
   position: absolute;
   top: 0;
   left: 0;

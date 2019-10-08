@@ -20,7 +20,7 @@
 }
 
 .line {
-  border-top: solid 3px #9B51E0;
+  border-top: solid 3px #ab59f7;
   transition: all 200ms ease-in;
 
   &__error {
@@ -30,7 +30,7 @@
 
   &__success {
     composes: line;
-    border-color: darkgreen;
+    border-color: #00ef00;
   }
 }
 

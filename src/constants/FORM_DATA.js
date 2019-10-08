@@ -60,14 +60,14 @@ export const FIELDS_PARAMS = [
     validate: required
   },
   {
-    width: '15rem',
+    // width: '15rem',
     placeholder: '0',
     measurement: 'мм.',
     type: 'number',
     validate: required
   },
   {
-    width: '12rem',
+    width: '10rem',
     placeholder: DEFAULT_VALUES[FIELD_RADIUS],
     options: [
       {
@@ -109,12 +109,12 @@ export const FIELDS_PARAMS = [
     ]
   },
   {
-    width: '20rem',
+    width: '18rem',
     placeholder: 'Например, бирюзовый',
     validate: required
   },
   {
-    width: '15rem',
+    width: '12rem',
     placeholder: DEFAULT_VALUES[FIELD_COLOR_SHADE],
     options: [{
       value: SHADES.gl,
