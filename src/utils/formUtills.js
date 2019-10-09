@@ -2,11 +2,14 @@ import _ from 'lodash'
 import { DEFAULT_VALUES, FIELD_COLOR_SHADE, PRICES } from '../constants/FORM_DATA'
 
 export const formatPushValues = (name, values, fields) => {
+  console.log(values, fields)
   if (!values) return
   const obj = {}
+  const lastIndex = values[name].length - 1
+  if (!lastIndex) return
 
   _.forEach(fields, item => {
-    obj[item] = values[name] && values[name][values[name].length - 1][item]
+    obj[item] = values[name][lastIndex] && values[name][lastIndex][item]
   })
   return obj
 }

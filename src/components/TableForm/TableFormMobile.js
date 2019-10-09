@@ -18,7 +18,7 @@ import {
 } from '../../constants/FORM_DATA'
 import { createPrice } from '../../utils/formUtills'
 
-const TableForm = ({ values, onSubmit, form: { mutators: { push, pop } }, submitFailed, pushNew, ...props }) => {
+const TableForm = ({ values, onSubmit, form: { reset, mutators: { push, pop } }, submitFailed, pushNew, ...props }) => {
   useMemo(() => {
     if (!Object.keys(values).length) push(FORM_TABLE_ORDER, undefined)
   }, [values])
@@ -95,7 +95,12 @@ const TableForm = ({ values, onSubmit, form: { mutators: { push, pop } }, submit
                 </div>
                 <div className={css.footer}>
                   <div className={css.price}><div>Стоимость</div> <span>{createPrice(fields.value[index])} ₽</span></div>
-                  <Button className={css.close} classname={'purple'} onClick={() => fields.remove(index)}>
+                  <Button className={css.close} classname={'purple'} onClick={() => {
+                    if (fields.length > 1) fields.remove(index)
+                    else {
+                      reset()
+                    }
+                  }}>
                   Стереть
                   </Button>
                 </div>
