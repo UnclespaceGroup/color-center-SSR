@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
 import TableFormDesktop from '../../components/TableForm/TableForm'
 import TableFormMobile from '../../components/TableForm/TableFormMobile'
 import { Form } from 'react-final-form'
@@ -24,9 +23,8 @@ import ErrorPopupMobile from '../../components/ErrorPopup/ErrorPopupMobile'
 import moment from 'moment'
 import { formatPushValues } from '../../utils/formUtills'
 
-const TableFormContainer = ({ id }) => {
+const TableFormContainer = ({ id, isDesktop }) => {
   // Определяем, мобильный или десктопный компонент рисовать
-  const isDesktop = useSelector(state => state.toJS().IsDesktop)
   const ModalOrder = isDesktop ? ModalOrderDesktop : ModalOrderMobile
   const SuccessForm = isDesktop ? SuccessFormDesktop : SuccessFormMobile
   const OrderFeedbackForm = isDesktop ? OrderFeedbackFormDesktop : OrderFeedbackFormMobile
@@ -83,7 +81,7 @@ const TableFormContainer = ({ id }) => {
           ...arrayMutators
         }}
         onSubmit={(data) => { onSubmitForm(data) }}
-        render={({ handleSubmit, values, form: { submit, reset, change, mutators }, form, pristine, hasValidationErrors, errors, ...props }) => {
+        render={({ handleSubmit, values, form: { reset, mutators }, form, pristine, hasValidationErrors, errors, ...props }) => {
           clearForm = reset
           const pushNew = () => {
             mutators.push(FORM_TABLE_ORDER, formatPushValues(FORM_TABLE_ORDER, values, [FIELD_RADIUS, FIELD_COLOR_CODE, FIELD_COLOR_SHADE]))
@@ -112,7 +110,7 @@ const TableFormContainer = ({ id }) => {
         <Form
           form={FORM_FEEDBACK}
           onSubmit={(data) => { onSubmitData(data) }}
-          render={({ form: { submit, reset }, pristine, hasValidationErrors, ...props }) => (
+          render={({ form: { submit }, pristine, hasValidationErrors }) => (
             <form>
               <OrderFeedbackForm
                 onSubmit={submit}

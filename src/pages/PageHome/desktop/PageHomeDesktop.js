@@ -35,7 +35,7 @@ const PageHomeDesktop = () => {
   const dispatch = useDispatch()
   const openWayOrderModal = (open) => {
     dispatch(openWayOrdersModal(open))
-  } // TODO Поставить лого на хедер
+  }
   return (
     <div className={s.container}>
       <ModalWayOrder openWayOrderModal={openWayOrderModal} />
@@ -66,7 +66,7 @@ const PageHomeDesktop = () => {
       <Padding value={120} />
       <Contacts id={ANCHOR_CONTACTS} />
       <Padding value={80} />
-      <TableFormContainer id={ANCHOR_FORM} />
+      <TableFormContainer isDesktop id={ANCHOR_FORM} />
       <Padding value={120} />
       <Footer />
     </div>
