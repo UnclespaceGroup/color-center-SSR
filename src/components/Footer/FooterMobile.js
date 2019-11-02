@@ -2,7 +2,7 @@ import React from 'react'
 import css from './FooterMobile.module.scss'
 import img from '../../static/shkaf.jpg'
 import Layout from '../Layout/LayoutMobile'
-import { MAIN_PHONE, MAIN_PHONE_LONG, VK_LINK } from '../../constants/USER_DATA'
+import { MAIN_PHONE_LINK, MAIN_PHONE_LONG, VK_LINK } from '../../constants/USER_DATA'
 import Padding from '../Padding/Padding'
 
 const Footer = () => (
@@ -10,7 +10,7 @@ const Footer = () => (
     <Layout>
       <div className={css.wrapper}>
         <div className={css.info}>
-          <div className={css.number}>{MAIN_PHONE}</div>
+          <div className={css.number}>{MAIN_PHONE_LINK}</div>
           <p>Центр Цвета, Сыктывкар</p>
           <Padding value={40} />
           <div className={css.socials}>

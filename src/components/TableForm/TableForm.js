@@ -53,7 +53,6 @@ const TableForm = ({ values, dirty, onSubmit, hasValidationErrors, onButtonClick
                   <tr key={index}>
                     <td >
                       <Field
-                        test
                         component={FieldInlineInput}
                         name={`${item}.${FIELD_COUNT}`}
                         {...FIELDS_PARAMS[0]}

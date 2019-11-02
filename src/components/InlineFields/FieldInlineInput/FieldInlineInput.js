@@ -3,7 +3,7 @@ import cn from 'classnames'
 import PropTypes from 'prop-types'
 import css from './FieldInlineInput.module.scss'
 
-const FieldInlineInput = ({ input, placeholder, measurement, type, width, meta, test }) => {
+const FieldInlineInput = ({ input, placeholder, measurement, type, width, meta, test, max }) => {
   const empty = input.value.length < 2
   const error = (meta.modified && meta.error) || (meta.touched && meta.error)
   return (
@@ -11,6 +11,7 @@ const FieldInlineInput = ({ input, placeholder, measurement, type, width, meta, 
       <input type={type}
         placeholder={placeholder}
         onChange={e => {
+          if (max && e.target.value > max) return
           input.onChange(e.target.value)
         }}
         value={input.value}

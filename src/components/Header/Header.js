@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import css from './Header.module.scss'
 import cn from 'classnames'
-import { MAIN_PHONE, MAIN_PHONE_LONG, MAIN_PHONE_LONG_LINK } from '../../constants/USER_DATA'
+import { MAIN_PHONE_LINK, MAIN_PHONE_LONG_LINK } from '../../constants/USER_DATA'
 import { scrollWindowTo } from 'utils/scrollWindowTo'
 import { ANCHOR_CONTACTS, ANCHOR_FORM, ANCHOR_PRICE, ANCHOR_USING_MDF } from '../../constants/ANCHORS'
 import { MdMenu, MdClose } from 'react-icons/md'
@@ -22,7 +22,7 @@ const Header = ({ openWayOrderModal }) => {
             <div className={css.item} onClick={() => { scrollWindowTo(ANCHOR_PRICE) }}>Цены</div>
             <div className={css.item} onClick={() => { scrollWindowTo(ANCHOR_CONTACTS) }}>Контакты</div>
             <div className={css.item} onClick={() => { openWayOrderModal(true) }} >Как заказать</div>
-            <a className={css.phone} href={`tel:${MAIN_PHONE_LONG}`}>{MAIN_PHONE}</a>
+            <div className={css.phone}>{MAIN_PHONE_LINK}</div>
             <div className={css.burger} onClick={() => setOpen(!open)}>{ open ? <MdClose /> : <MdMenu />}</div>
           </div>
         </div>

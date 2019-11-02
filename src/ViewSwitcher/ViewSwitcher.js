@@ -6,14 +6,18 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet/lib/Helmet'
 import MobileView from './LoadableMobileView'
 import DesktopView from './LoadableDesktopView'
-import TabletView from './LoadableTabletView'
 import { withViewContext } from 'HOC/ViewContext'
 import { setIsDesktop } from '../actions/isDesktopAction'
+import { YMInitializer } from 'react-yandex-metrika'
+import ReactGA from 'react-ga'
+import { withRouter } from 'react-router'
 
-const ViewSwitcher = ({ sizes: { isDesktop, isMobile } }) => {
+const ViewSwitcher = ({ location, sizes: { isDesktop, isMobile } }) => {
   const dispatch = useDispatch()
   useMemo(() => {
-    dispatch(setIsDesktop(!!isDesktop))
+    ReactGA.initialize('UA-100727616-5')
+    ReactGA.pageview(location.pathname + location.search)
+    dispatch(setIsDesktop(!isMobile))
   }, [isDesktop, isMobile])
   return (
     <>
@@ -24,7 +28,8 @@ const ViewSwitcher = ({ sizes: { isDesktop, isMobile } }) => {
           }`}
         />
       </Helmet>
-      {isMobile ? <MobileView /> : isDesktop ? <DesktopView /> : <TabletView />}
+      <YMInitializer accounts={[56016901]} />
+      {isMobile ? <MobileView /> : <DesktopView />}
     </>
   )
 }
@@ -34,6 +39,7 @@ ViewSwitcher.propTypes = {
 }
 
 export default compose(
+  withRouter,
   withViewContext,
   hot(module)
 )(ViewSwitcher)

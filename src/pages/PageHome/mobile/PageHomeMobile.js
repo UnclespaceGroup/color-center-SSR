@@ -20,6 +20,7 @@ import ModalWayOrder from '../../../containers/ModalWayOrder/ModalWayOrderMobile
 
 import { text, bannerGuaranty } from '../desktop/PageHomeDesktop'
 import TableFormContainer from 'containers/TableFormContainer/TableFormContainer'
+import { MAIN_PHONE_LINK } from '../../../constants/USER_DATA'
 
 const PageHomeMobile = () => {
   const dispatch = useDispatch()
@@ -41,7 +42,13 @@ const PageHomeMobile = () => {
       <BlockColors />
       <Padding value={60} />
       <Bg img={car}>
-        <BannerMobile bgColor={'rgba(0,0,0,0.5)'} title={'Бесплатная доставка'} text={'Бесплатно по городу Сыктывкар. Возможность доставки по республике Коми'} />
+        <BannerMobile bgColor={'rgba(0,0,0,0.5)'} title={'Бесплатная доставка'}
+          text={
+            <div>
+              <p>Бесплатно по городу Сыктывкар</p>
+              <p> Возможность доставки по Республике Коми</p>
+              <p> Для заказа звоните {MAIN_PHONE_LINK}</p>
+            </div>} />
       </Bg>
       <Padding value={60} />
       <Prices openWayOrderModal={openWayOrderModal} id={ANCHOR_PRICE} />

@@ -1,4 +1,4 @@
-import { required } from '../utils/validators'
+import { composeValidators, maxValue, minValue, required } from '../utils/validators'
 
 export const FORM_ORDER = 'orderForm'
 export const FORM_TABLE_ORDER = 'FORM_TABLE_ORDER'
@@ -39,32 +39,36 @@ export const PRICES = {
 
 export const FIELDS_PARAMS = [
   {
-    width: '',
+    width: '', // количество
     placeholder: '0',
+    max: 10000,
     measurement: 'шт.',
     type: 'number',
-    validate: required
+    validate: composeValidators(required, minValue(1))
   },
   {
-    width: '',
+    width: '', // длина
     placeholder: '0',
     measurement: 'мм.',
     type: 'number',
-    validate: required
+    max: 10000,
+    validate: composeValidators(required, minValue(100), maxValue(10000))
   },
   {
-    width: '',
+    width: '', // ширина
     placeholder: '0',
     measurement: 'мм.',
     type: 'number',
-    validate: required
+    max: 10000,
+    validate: composeValidators(required, minValue(100), maxValue(10000))
   },
   {
-    // width: '15rem',
+    // width: '15rem', // толщина
     placeholder: '0',
     measurement: 'мм.',
     type: 'number',
-    validate: required
+    max: 1000,
+    validate: composeValidators(required, minValue(1), maxValue(1000))
   },
   {
     width: '10rem',

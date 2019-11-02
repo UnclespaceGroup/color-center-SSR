@@ -17,7 +17,7 @@ import { ANCHOR_CONTACTS, ANCHOR_FORM, ANCHOR_PRICE, ANCHOR_USING_MDF } from '..
 import ModalWayOrder from '../../../containers/ModalWayOrder/ModalWayOrder'
 import { useDispatch } from 'react-redux'
 import { openWayOrdersModal } from '../../../actions/openWayOrdersModal'
-import { MAIN_PHONE_LONG_LINK } from '../../../constants/USER_DATA'
+import { MAIN_PHONE_LINK, MAIN_PHONE_LONG_LINK } from '../../../constants/USER_DATA'
 import TableFormContainer from '../../../containers/TableFormContainer/TableFormContainer'
 
 export const text = <div>
@@ -25,7 +25,11 @@ export const text = <div>
   <p>Или заполните форму ниже</p>
 </div>
 
-export const bannerGuaranty = 'Покраска производится специализированным оборудованием при строгом соблюдении технологий'
+export const bannerGuaranty = <div>
+  <p>Покраска производится специализированным оборудованием при строгом соблюдении технологий
+  </p>
+  <address>{MAIN_PHONE_LINK}</address>
+</div>
 
 const PageHomeDesktop = () => {
   const dispatch = useDispatch()
@@ -47,7 +51,13 @@ const PageHomeDesktop = () => {
       <BlockColors />
       <Padding value={120} />
       <Bg img={car}>
-        <Banner bgColor={'rgba(0,0,0,0.5)'} title={'Бесплатная доставка'} text={<div>Бесплатно по городу Сыктывкар<br /> Возможность доставки по Республике Коми</div>} />
+        <Banner bgColor={'rgba(0,0,0,0.5)'} title={'Бесплатная доставка'}
+          text={
+            <div>
+              <p>Бесплатно по городу Сыктывкар</p>
+              <p> Возможность доставки по Республике Коми</p>
+              <p> Для заказа звоните {MAIN_PHONE_LINK}</p>
+            </div>} />
       </Bg>
       <Padding value={120} />
       <Prices id={ANCHOR_PRICE} openWayOrderModal={openWayOrderModal} />
