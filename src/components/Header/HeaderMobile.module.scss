@@ -26,7 +26,7 @@
 }
 
 .header {
-  padding: 1rem 0;
+  padding: 1.4rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,20 +60,20 @@
   font-size: 2rem;
   line-height: 2.3rem;
   color: #000000;
-  margin-bottom: 4rem;
+  margin-bottom: 2.4rem;
 }
 
 .phone {
-  margin-top: 5rem;
+  margin-top: 10rem;
   display: block;
-  font-size: 3.6rem;
+  font-size: 2.4rem;
   line-height: 4.2rem;
   color: #E30000;
 
   &:before {
     content: '';
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 2.2rem;
+    height: 2.2rem;
     display: inline-block;
     margin-right: 1rem;
     margin-bottom: -0.5rem;

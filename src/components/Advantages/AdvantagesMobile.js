@@ -9,6 +9,7 @@ const params = {
   centeredSlides: true,
   containerClass: css.container,
   loop: true,
+  rebuildOnUpdate: true,
   slideClass: css.wrapper,
   spaceBetween: 30,
   pagination: {

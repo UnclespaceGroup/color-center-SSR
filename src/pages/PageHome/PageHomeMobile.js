@@ -13,9 +13,8 @@ import Footer from 'components/Footer/FooterMobile'
 import Header from 'components/Header/HeaderMobile'
 import Prices from 'components/Prices/PricesMobile'
 import Contacts from 'components/Contacts/ContactsMobile'
-import { ANCHOR_CONTACTS, ANCHOR_FORM, ANCHOR_PRICE } from 'constants/ANCHORS'
+import { ANCHOR_CONTACTS, ANCHOR_PRICE } from 'constants/ANCHORS'
 import { text, bannerGuaranty } from 'pages/PageHome/PageHomeDesktop'
-import TableFormContainer from 'containers/TableFormContainer/TableFormContainer'
 import { MAIN_PHONE_LINK } from 'constants/USER_DATA'
 import usePageHome from 'pages/PageHome/usePageHome'
 
@@ -49,8 +48,6 @@ const PageHomeMobile = () => {
       <BannerMobile title={'Заказать очень легко'} text={text} icon={iconGalka} />
       <Padding value={60} />
       <Contacts id={ANCHOR_CONTACTS} />
-      <Padding value={20} />
-      <TableFormContainer id={ANCHOR_FORM} />
       <Padding value={60} />
       <Footer />
     </div>

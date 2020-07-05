@@ -5,7 +5,7 @@ import {
   PAGE_HOME
 } from 'constants/ROUTES'
 import PageHomeDesktop from 'pages/PageHome/PageHomeDesktop'
-import PageFormDesktop from 'pages/PageForm/PageForm'
+import PageFormDesktop from 'pages/PageForm/PageFormDesktop'
 
 const RoutesDesktop = () => (
   <Switch>

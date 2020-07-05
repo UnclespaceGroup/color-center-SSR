@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import css from './HeaderMobile.module.scss'
 import Collapse from 'react-collapse'
 import { MdMenu, MdClose } from 'react-icons/md'
-import { MAIN_PHONE_LINK_SHORT, MAIN_PHONE_LONG } from '../../constants/USER_DATA'
+import { MAIN_PHONE_LONG } from 'constants/USER_DATA'
 import LayoutMobile from '../Layout/LayoutMobile'
-import { scrollWindowTo } from '../../utils/scrollWindowTo'
-import { ANCHOR_CONTACTS, ANCHOR_FORM, ANCHOR_PRICE } from '../../constants/ANCHORS'
+import { scrollWindowTo } from 'utils/scrollWindowTo'
+import { ANCHOR_CONTACTS, ANCHOR_FORM, ANCHOR_PRICE } from 'constants/ANCHORS'
 
 const HeaderMobile = ({ openWayOrderModal }) => {
   const [ isOpen, setIsOpen ] = useState(false)
@@ -19,7 +19,6 @@ const HeaderMobile = ({ openWayOrderModal }) => {
         <LayoutMobile>
           <div className={css.header}>
             <div className={css.logo} >Центр цвета</div>
-            <div className={css.phone}>{MAIN_PHONE_LINK_SHORT}</div>
             <div className={css.burger} onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <MdClose /> : <MdMenu />}
             </div>

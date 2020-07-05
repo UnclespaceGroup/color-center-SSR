@@ -3,11 +3,11 @@ import css from './Header.module.scss'
 import cn from 'classnames'
 import { MAIN_PHONE_LINK, MAIN_PHONE_LONG_LINK } from 'constants/USER_DATA'
 import { scrollWindowTo } from 'utils/scrollWindowTo'
-import { ANCHOR_CONTACTS, ANCHOR_FORM, ANCHOR_PRICE, ANCHOR_USING_MDF } from 'constants/ANCHORS'
+import { ANCHOR_CONTACTS, ANCHOR_FORM, ANCHOR_PRICE, ANCHOR_USING_MDF, ANCHOR_HOW_ORDER } from 'constants/ANCHORS'
 import { MdMenu, MdClose } from 'react-icons/md'
 import Collapse from 'react-collapse'
 
-const Header = ({ openWayOrderModal }) => {
+const Header = () => {
   const [ open, setOpen ] = useState(false)
   const scrollToHandle = (anchor) => {
     setOpen(false)
@@ -19,9 +19,10 @@ const Header = ({ openWayOrderModal }) => {
         <div className={css.header}>
           <div className={css.logo} >Центр цвета</div>
           <div className={css.right}>
-            <div className={css.item} onClick={() => { scrollWindowTo(ANCHOR_PRICE) }}>Цены</div>
-            <div className={css.item} onClick={() => { scrollWindowTo(ANCHOR_CONTACTS) }}>Контакты</div>
-            <div className={css.item} onClick={() => { openWayOrderModal(true) }} >Как заказать</div>
+            <a className={css.item} onClick={() => { scrollWindowTo(ANCHOR_PRICE) }}>Цены</a>
+            <a className={css.item} onClick={() => { scrollWindowTo(ANCHOR_CONTACTS) }}>Контакты</a>
+            <a className={css.item} onClick={() => { scrollWindowTo(ANCHOR_HOW_ORDER) }}>Как заказать</a>
+            <div className={css.item}><b>г. Сыктывкар</b></div>
             <div className={css.phone}>{MAIN_PHONE_LINK}</div>
             <div className={css.burger} onClick={() => setOpen(!open)}>{ open ? <MdClose /> : <MdMenu />}</div>
           </div>
@@ -37,7 +38,7 @@ const Header = ({ openWayOrderModal }) => {
               <div className={css.content__item} onClick={() => { scrollToHandle(ANCHOR_PRICE) }}>Стоимость и сроки</div>
               <div className={css.content__item} onClick={() => { scrollToHandle(ANCHOR_CONTACTS) }}>Контактная информация</div>
               <div className={css.content__item} onClick={() => { scrollToHandle(ANCHOR_FORM) }}>Форма заказа</div>
-              <div className={css.content__item} onClick={() => { openWayOrderModal(true) }} >Способы заказа МДФ панели</div>
+              <div className={css.content__item}>Способы заказа МДФ панели</div>
             </div>
           </div>
         </Collapse>

@@ -18,12 +18,14 @@ const UsingMDF = ({ id, items = [], title }) => (
     <div className={css.container}>
       {
         items.map((item, key) => (
-          <Bg key={key} img={item.img} className={cn(css[`item_${key}`], css.item)}>
-            <div className={css.wrapper} >
-              <div className={css.title}>{item.title}</div>
-              <div className={css.text}>{item.text}</div>
+          <Bg key={key} img={item.img} className={cn(css[`item_${key}`])}>
+            <div className={css.itemContainer}>
+              <div className={css.wrapper} >
+                <div className={css.title}>{item.title}</div>
+                <div className={css.text}>{item.text}</div>
+              </div>
+              <div className={css.button}><Button classname={'inline'} onClick={() => { scrollWindowTo(ANCHOR_FORM) }} >Подробнее<MdKeyboardArrowRight /></Button></div>
             </div>
-            <div className={css.button}><Button classname={'inline'} onClick={() => { scrollWindowTo(ANCHOR_FORM) }} >Заказать<MdKeyboardArrowRight /></Button></div>
           </Bg>
         ))
       }

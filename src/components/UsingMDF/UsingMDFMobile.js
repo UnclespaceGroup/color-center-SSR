@@ -8,12 +8,10 @@ import { MdKeyboardArrowRight } from 'react-icons/md'
 import { ANCHOR_FORM } from 'constants/ANCHORS'
 import { scrollWindowTo } from 'utils/scrollWindowTo'
 
-const UsingMDF = ({ openWayOrderModal, items = [] }) => (
-  <>
-    <LayoutMobile>
-      <h2>Применение МДФ панелей</h2>
-      <Padding value={20} />
-    </LayoutMobile>
+const UsingMDF = ({ items = [] }) => (
+  <LayoutMobile>
+    <h2 className={css.mainTitle}>Применение МДФ панелей</h2>
+    <Padding value={20} />
     <div className={css.container}>
       {
         items.map((item, key) => (
@@ -29,7 +27,7 @@ const UsingMDF = ({ openWayOrderModal, items = [] }) => (
         ))
       }
     </div>
-  </>
+  </LayoutMobile>
 )
 
 export default React.memo(UsingMDF)

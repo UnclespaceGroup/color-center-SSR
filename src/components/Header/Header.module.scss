@@ -43,12 +43,14 @@
 }
 
 .item {
-  cursor: pointer;
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 2.3rem;
   color: #000000;
   margin-right: 2.4rem;
+}
+button.item, a.item {
+  cursor: pointer;
   transition: all 200ms ease-in;
 
   &:hover {

@@ -1,21 +1,15 @@
 .container {
   position: relative;
-  height: 56rem;
-  width: 100%;
   background: no-repeat center;
   background-size: cover;
+}
+
+.fade {
+  padding: 4rem 0;
+  background: rgba(0, 0, 0, 0.68);
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  &:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 56rem;
-    background: rgba(0, 0, 0, 0.68);
-    z-index: 2;
-  }
 }
 
 .wrapper {
@@ -26,7 +20,7 @@
 .info {
   margin-bottom: 2rem;
   .number {
-    font-size: 4rem;
+    font-size: 3rem;
     line-height: 5rem;
     color: #F7B100;
     margin-bottom: 3.5rem;
@@ -70,24 +64,17 @@
 
 .brand {
   width: 100%;
-  height: 10.5rem;
   margin-top: 4rem;
   display: flex;
   flex-direction: column;
 
   span {
-
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 1.8rem;
     line-height: 2.1rem;
-    /* identical to box height */
-
     color: #FFFFFF;
   }
   .logo {
-    height: 10.5rem;
+    height: 8rem;
     width: 13rem;
     background-image: url("../../static/unclespace_white.png");
     background-size: contain;
