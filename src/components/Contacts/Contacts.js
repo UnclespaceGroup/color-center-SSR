@@ -44,7 +44,7 @@ const Contacts = ({ id }) => (
       </YMaps>
     </div>
     <div className={css.wrapper} >
-      <h3>Контактная информация</h3>
+      <h3 className={css.title}>Контактная информация</h3>
       <Padding value={32} />
       {
         _.map(contacts, (contact, key) => (

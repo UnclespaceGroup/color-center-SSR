@@ -5,11 +5,10 @@ import LayoutMobile from '../Layout/LayoutMobile'
 import Padding from '../Padding/Padding'
 import Button from '../Button/Button'
 import { MdKeyboardArrowRight } from 'react-icons/md'
-import { items } from './UsingMDF'
-import { ANCHOR_FORM } from '../../constants/ANCHORS'
-import { scrollWindowTo } from '../../utils/scrollWindowTo'
+import { ANCHOR_FORM } from 'constants/ANCHORS'
+import { scrollWindowTo } from 'utils/scrollWindowTo'
 
-const UsingMDF = ({ openWayOrderModal }) => (
+const UsingMDF = ({ openWayOrderModal, items = [] }) => (
   <>
     <LayoutMobile>
       <h2>Применение МДФ панелей</h2>

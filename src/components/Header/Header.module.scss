@@ -44,10 +44,11 @@
 
 .item {
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 1.6rem;
+  font-weight: 500;
   line-height: 2.3rem;
   color: #000000;
-  margin-right: 5rem;
+  margin-right: 2.4rem;
   transition: all 200ms ease-in;
 
   &:hover {
@@ -57,14 +58,14 @@
 
 .phone {
   display: block;
-  font-size: 3rem;
-  line-height: 4.2rem;
+  font-size: 2rem;
+  line-height: 1em;
   color: #E30000;
 
   &:before {
     content: '';
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 2.4rem;
+    height: 2.4rem;
     display: inline-block;
     margin-right: 1rem;
     margin-bottom: -0.5rem;

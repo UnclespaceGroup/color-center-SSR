@@ -1,7 +1,6 @@
 import React from 'react'
 import css from './AdvantagesMobile.module.scss'
 import Swiper from 'react-id-swiper'
-import { items } from './Advantages'
 // import 'react-id-swiper/lib/styles/css/swiper.css'
 
 const params = {
@@ -18,7 +17,7 @@ const params = {
   }
 }
 
-const AdvantagesMobile = () => {
+const AdvantagesMobile = ({ items = [] }) => {
   return (
     <div >
       <Swiper

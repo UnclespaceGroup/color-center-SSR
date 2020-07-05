@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import css from './Header.module.scss'
 import cn from 'classnames'
-import { MAIN_PHONE_LINK, MAIN_PHONE_LONG_LINK } from '../../constants/USER_DATA'
+import { MAIN_PHONE_LINK, MAIN_PHONE_LONG_LINK } from 'constants/USER_DATA'
 import { scrollWindowTo } from 'utils/scrollWindowTo'
-import { ANCHOR_CONTACTS, ANCHOR_FORM, ANCHOR_PRICE, ANCHOR_USING_MDF } from '../../constants/ANCHORS'
+import { ANCHOR_CONTACTS, ANCHOR_FORM, ANCHOR_PRICE, ANCHOR_USING_MDF } from 'constants/ANCHORS'
 import { MdMenu, MdClose } from 'react-icons/md'
 import Collapse from 'react-collapse'
 

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import css from './Banner.module.scss'
 import Layout from '../Layout/Layout'
 
-const Banner = ({ title, text, icon, bgColor }) => (
-  <div className={css.container} style={{ background: bgColor }}>
+const Banner = ({ title, text, icon, bgColor, ...other }) => (
+  <div className={css.container} {...other} style={{ background: bgColor }}>
     <Layout className={css.wrapper}>
       { icon && <div className={css.icon} style={{ backgroundImage: `url(${icon})` }} />}
       <div className={css.title}>{title}</div>

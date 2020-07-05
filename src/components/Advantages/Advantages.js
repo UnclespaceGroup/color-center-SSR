@@ -1,47 +1,8 @@
 import React from 'react'
 import css from './Advantages.module.scss'
 import Layout from '../Layout/Layout'
-import im1 from 'static/svg/volume_off-24px.svg'
-import im2 from 'static/svg/eco-24px.svg'
-import im3 from 'static/svg/time.svg'
-import im4 from 'static/svg/house-24px.svg'
-import im5 from 'static/svg/build.svg'
-import im6 from 'static/svg/landscape-24px.svg'
 
-export const items = [
-  {
-    img: im2,
-    title: 'Экологически чисто',
-    text: 'Стружка цеппляется лингнином, выделяемом из древисины'
-  },
-  {
-    img: im6,
-    title: 'Широкое использование',
-    text: 'МДФ панели можно использовать как для корпусной мебели, так и комнатного декора'
-  },
-  {
-    img: im3,
-    title: 'Надежность',
-    text: 'Полировка панели вернет ей первозданный вид'
-  },
-  {
-    img: im4,
-    title: 'Легко ухаживать',
-    text: 'МДФ не боятся влаги, больших температур, химических моющих средств'
-  },
-  {
-    img: im5,
-    title: 'Просто восстановить',
-    text: 'Вы всегда сможете обратиться к нам, за повторной покраской МДФ панели'
-  },
-  {
-    img: im1,
-    title: 'Тепло и звукоизоляция',
-    text: 'Стены из МДФ панелей защитят вас от шума на улице, сделают квартиру теплее'
-  }
-]
-
-const Advantages = () => (
+const Advantages = ({ items = [] }) => (
   <Layout >
     <div className={css.container}>
       {
