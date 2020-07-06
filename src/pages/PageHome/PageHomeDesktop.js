@@ -10,9 +10,8 @@ import car from 'static/car.jpg'
 import Bg from 'components/Bg/Bg'
 import Footer from 'components/Footer/Footer'
 import Header from 'components/Header/Header'
-import Prices from 'components/Prices/Prices'
 import Contacts from 'components/Contacts/Contacts'
-import { ANCHOR_CONTACTS, ANCHOR_PRICE, ANCHOR_USING_MDF } from 'constants/ANCHORS'
+import { ANCHOR_HOW_ORDER, ANCHOR_USING_MDF } from 'constants/ANCHORS'
 import { MAIN_PHONE_LINK, MAIN_PHONE_LONG_LINK } from 'constants/USER_DATA'
 import s from 'pages/PageHome/pageHomeDesktop.module.scss'
 import usePageHome from 'pages/PageHome/usePageHome'
@@ -53,11 +52,7 @@ const PageHomeDesktop = () => {
             </div>} />
       </Bg>
       <Padding value={120} />
-      <Prices id={ANCHOR_PRICE} />
-      <Padding value={120} />
-      <Banner title='Заказать очень легко' text={text} />
-      <Padding value={120} />
-      <Contacts id={ANCHOR_CONTACTS} />
+      <Contacts id={ANCHOR_HOW_ORDER} />
       <Padding value={120} />
       <Footer />
     </div>

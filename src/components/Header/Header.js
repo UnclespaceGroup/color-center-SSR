@@ -20,7 +20,6 @@ const Header = () => {
           <div className={css.logo} >Центр цвета</div>
           <div className={css.right}>
             <a className={css.item} onClick={() => { scrollWindowTo(ANCHOR_PRICE) }}>Цены</a>
-            <a className={css.item} onClick={() => { scrollWindowTo(ANCHOR_CONTACTS) }}>Контакты</a>
             <a className={css.item} onClick={() => { scrollWindowTo(ANCHOR_HOW_ORDER) }}>Как заказать</a>
             <div className={css.item}><b>г. Сыктывкар</b></div>
             <div className={css.phone}>{MAIN_PHONE_LINK}</div>

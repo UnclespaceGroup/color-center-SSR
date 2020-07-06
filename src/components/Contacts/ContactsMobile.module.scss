@@ -1,38 +1,36 @@
 .container {
-
+  @include layoutMobile;
 }
 
 .wrapper {
   width: 100%;
 }
 
+.title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
 .item {
   display: flex;
+  align-items: center;
   margin-bottom: 2rem;
-  border-bottom: solid 1px #b3b3b3;
   padding-bottom: 1rem;
 
   &__icon {
-    width: 2.4rem;
     margin-right: 2rem;
 
     svg {
-      width: 2.4rem;
-      height: 2.4rem;
-      color: dimgrey;
+      width: 3.2rem;
+      height: 3.2rem;
     }
   }
-  &__title, &__title p {
-    font-size: 1.8rem;
-    font-weight: 300;
+  &__title {
+    font-size: 1.2rem;
   }
-
-  p {
-    margin-bottom: 1rem;
+  &__text{
+    font-weight: 500;
+    margin-top: .4rem;
+    font-size: 1.6rem;
   }
-}
-
-.map {
-  width: 100%;
-  height: 25rem;
 }

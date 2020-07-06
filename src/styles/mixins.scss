@@ -1,1 +1,9 @@
+@mixin layout {
+  width: 120rem;
+  margin: 0 auto;
+}
 
+@mixin layoutMobile {
+  width: 100%;
+  padding: 0 2rem;
+}

@@ -11,10 +11,9 @@ import car from 'static/car.jpg'
 import Bg from 'components/Bg/Bg'
 import Footer from 'components/Footer/FooterMobile'
 import Header from 'components/Header/HeaderMobile'
-import Prices from 'components/Prices/PricesMobile'
 import Contacts from 'components/Contacts/ContactsMobile'
-import { ANCHOR_CONTACTS, ANCHOR_PRICE } from 'constants/ANCHORS'
-import { text, bannerGuaranty } from 'pages/PageHome/PageHomeDesktop'
+import { ANCHOR_CONTACTS } from 'constants/ANCHORS'
+import { bannerGuaranty } from 'pages/PageHome/PageHomeDesktop'
 import { MAIN_PHONE_LINK } from 'constants/USER_DATA'
 import usePageHome from 'pages/PageHome/usePageHome'
 
@@ -42,10 +41,6 @@ const PageHomeMobile = () => {
               <p> Для заказа звоните {MAIN_PHONE_LINK}</p>
             </div>} />
       </Bg>
-      <Padding value={60} />
-      <Prices id={ANCHOR_PRICE} />
-      <Padding value={60} />
-      <BannerMobile title={'Заказать очень легко'} text={text} icon={iconGalka} />
       <Padding value={60} />
       <Contacts id={ANCHOR_CONTACTS} />
       <Padding value={60} />

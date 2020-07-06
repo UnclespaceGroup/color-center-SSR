@@ -26,22 +26,9 @@
 .info {
   margin-bottom: 4.5rem;
   .number {
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 6.4rem;
-    line-height: 7.5rem;
-    /* identical to box height */
-
+    font-size: 4rem;
     color: #F7B100;
     margin-bottom: 3.5rem;
-  }
-  p {
-    font-family: Roboto, sans-serif;
-    font-weight: 300;
-    font-size: 2.4rem;
-    line-height: 2.8rem;
-    color: #FFFFFF;
   }
   .socials {
     bottom: 12rem;
@@ -81,13 +68,8 @@
   align-items: flex-end;
   justify-content: space-between;
   span {
-
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    font-weight: normal;
     font-size: 1.8rem;
     line-height: 2.1rem;
-    /* identical to box height */
 
     color: #FFFFFF;
   }
@@ -98,4 +80,9 @@
     background-size: contain;
     background-repeat: no-repeat;
   }
+}
+
+.text {
+  color: white;
+  font-size: 2rem;
 }

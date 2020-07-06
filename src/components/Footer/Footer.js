@@ -2,7 +2,7 @@ import React from 'react'
 import css from './Footer.module.scss'
 import img from '../../static/shkaf.jpg'
 import Layout from '../Layout/Layout'
-import { MAIN_PHONE_LINK, MAIN_PHONE_LONG, VK_LINK } from '../../constants/USER_DATA'
+import { MAIN_PHONE_LINK, MAIN_PHONE_LONG, VK_LINK } from 'constants/USER_DATA'
 import Padding from '../Padding/Padding'
 
 const Footer = () => (
@@ -11,7 +11,7 @@ const Footer = () => (
       <div className={css.wrapper}>
         <div className={css.info}>
           <div className={css.number}>{MAIN_PHONE_LINK}</div>
-          <p>Центр Цвета, Сыктывкар</p>
+          <div className={css.text}>Центр Цвета, Сыктывкар</div>
           <Padding value={40} />
           <div className={css.socials}>
             <a href={`tel:${MAIN_PHONE_LONG}`} className={css.viber} />
