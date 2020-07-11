@@ -3,14 +3,10 @@ import css from './UsingMDF.module.scss'
 import Bg from '../Bg/Bg'
 import Layout from '../Layout/Layout'
 import Padding from '../Padding/Padding'
-import Button from '../Button/Button'
-import { MdKeyboardArrowRight } from 'react-icons/md'
 import cn from 'classnames'
-import { ANCHOR_FORM } from 'constants/ANCHORS'
-import { scrollWindowTo } from 'utils/scrollWindowTo'
 
-const UsingMDF = ({ id, items = [], title }) => (
-  <div id={id}>
+const UsingMDF = ({ id, items = [], title, className }) => (
+  <div id={id} className={className}>
     <Layout>
       <h2 className={css.mailTitle}>{title}</h2>
       <Padding value={80} />
@@ -24,7 +20,6 @@ const UsingMDF = ({ id, items = [], title }) => (
                 <div className={css.title}>{item.title}</div>
                 <div className={css.text}>{item.text}</div>
               </div>
-              <div className={css.button}><Button classname={'inline'} onClick={() => { scrollWindowTo(ANCHOR_FORM) }} >Подробнее<MdKeyboardArrowRight /></Button></div>
             </div>
           </Bg>
         ))

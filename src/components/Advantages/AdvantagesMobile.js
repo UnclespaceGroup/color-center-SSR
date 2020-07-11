@@ -18,9 +18,9 @@ const params = {
   }
 }
 
-const AdvantagesMobile = ({ items = [] }) => {
+const AdvantagesMobile = ({ items = [], className }) => {
   return (
-    <div >
+    <div className={className} >
       <Swiper
         {...params}
       >

@@ -3,14 +3,14 @@
 }
 
 .mainTitle {
-  font-weight: 500!important;
-  font-size: 2.4rem!important;
-  line-height: 1.2em!important;
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 1.2em;
+  @include layoutMobile;
 }
 
 .bg {
   margin-bottom: 1rem;
-  border-radius: .4rem;
   overflow: hidden;
 }
 
@@ -37,5 +37,4 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 2rem;
-  background-color: rgba(0,0,0,0.5);
 }

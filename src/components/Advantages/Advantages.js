@@ -2,8 +2,8 @@ import React from 'react'
 import css from './Advantages.module.scss'
 import Layout from '../Layout/Layout'
 
-const Advantages = ({ items = [] }) => (
-  <Layout >
+const Advantages = ({ items = [], className }) => (
+  <Layout className={className} >
     <div className={css.container}>
       {
         items.map((item, key) => (

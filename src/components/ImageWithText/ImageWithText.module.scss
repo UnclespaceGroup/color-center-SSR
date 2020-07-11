@@ -1,0 +1,28 @@
+.container {
+  @include layout;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 40rem;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.content {
+  width: 42%;
+}
+.title {
+  font-size: 3.6rem;
+  font-weight: 500;
+  margin-bottom: 2.4rem;
+}
+.text {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  font-weight: 300;
+}
+.img {
+  width: 50%;
+}
