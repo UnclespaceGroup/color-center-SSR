@@ -1,0 +1,88 @@
+.container {
+  margin-top: 4rem;
+}
+
+.bannerWrapper {
+  padding-top: 24rem;
+  padding-bottom: 8rem;
+  background-color: rgba(0,0,0,0.5);
+
+  h1 {
+    color: white;
+    font-size: 2.8rem;
+    margin-bottom: 2.4rem;
+  }
+
+  p {
+    color: white;
+    font-size: 1.4rem;
+  }
+}
+
+
+
+.titleH2 {
+  margin-top: 3.2rem;
+  font-size: 2.4rem;
+  margin-bottom: 1.6rem;
+  font-weight: 500;
+}
+
+.titleH3 {
+  margin-top: 2.4rem;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1.6rem;
+}
+
+.table {
+  margin: 0 -1rem;
+}
+
+.tableBlock {
+  padding: 2rem 1rem;
+
+  &:nth-child(2n + 1) {
+    background-color: rgba(0,0,0,0.05);
+  }
+
+  &:not(:last-child) {
+    //border-bottom: solid 1px darkgray;
+  }
+}
+
+.tableTitle {
+  font-size: 1.2rem;
+  color: #727272;
+  margin-bottom: .4rem;
+}
+
+.tableValue {
+  font-size: 1.4rem;
+
+  &:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+}
+
+.advantages {
+  font-size: 1.4rem;
+
+  li {
+    margin-bottom: 2.4rem;
+    padding-left: 2.4rem;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: .6rem;
+      display: inline-block;
+      width: .6rem;
+      height: .6rem;
+      border-radius: 50%;
+      background-color: #9B51E0;
+    }
+  }
+}

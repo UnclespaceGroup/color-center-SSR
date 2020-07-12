@@ -52,11 +52,12 @@
 }
 
 .item {
-  cursor: pointer;
+  display: block;
   font-size: 2rem;
   line-height: 2.3rem;
   color: #000000;
   margin-bottom: 1.6rem;
+  font-weight: 500;
 }
 
 .phone {

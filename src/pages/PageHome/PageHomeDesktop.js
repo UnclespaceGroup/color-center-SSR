@@ -31,7 +31,6 @@ const PageHomeDesktop = () => {
       <BlockColors />
       <Banner className={css.banner} {...delivery} />
       <Contacts id={ANCHOR_HOW_ORDER} />
-      <Padding value={120} />
       <Footer />
     </div>
   )

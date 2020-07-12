@@ -5,6 +5,8 @@ import { MAIN_PHONE_LINK, MAIN_PHONE_LONG_LINK } from 'constants/USER_DATA'
 import { scrollWindowTo } from 'utils/scrollWindowTo'
 import { ANCHOR_CONTACTS, ANCHOR_FORM, ANCHOR_PRICE, ANCHOR_USING_MDF, ANCHOR_HOW_ORDER } from 'constants/ANCHORS'
 import Collapse from 'react-collapse'
+import { Link } from 'react-router-dom'
+import { PAGE_HOME, PAGE_PRICE } from 'constants/ROUTES'
 
 const Header = () => {
   const [ open, setOpen ] = useState(false)
@@ -16,9 +18,10 @@ const Header = () => {
     <>
       <div className={cn(css.container, { [css.open]: open })}>
         <div className={css.header}>
-          <div className={css.logo} >Центр цвета</div>
+          <Link to={PAGE_HOME} className={css.logo} >Центр цвета</Link>
           <div className={css.right}>
-            <a className={css.item} onClick={() => { scrollWindowTo(ANCHOR_PRICE) }}>Цены</a>
+            <Link className={css.item} to={PAGE_HOME}>Главная</Link>
+            <Link className={css.item} to={PAGE_PRICE}>Цены</Link>
             <a className={css.item} onClick={() => { scrollWindowTo(ANCHOR_HOW_ORDER) }}>Как заказать</a>
             <div className={css.item}><b>г. Сыктывкар</b></div>
             <div className={css.phone}>{MAIN_PHONE_LINK}</div>

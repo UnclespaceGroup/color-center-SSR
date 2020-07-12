@@ -9,6 +9,7 @@ import { withViewContext } from 'HOC/ViewContext'
 import { YMInitializer } from 'react-yandex-metrika'
 import ReactGA from 'react-ga'
 import { withRouter } from 'react-router'
+import ScrollToTop from 'HOC/ScrollToTop'
 
 const ViewSwitcher = ({ location, sizes: { isDesktop, isMobile } }) => {
   useMemo(() => {
@@ -16,7 +17,7 @@ const ViewSwitcher = ({ location, sizes: { isDesktop, isMobile } }) => {
     ReactGA.pageview(location.pathname + location.search)
   }, [isDesktop, isMobile])
   return (
-    <>
+    <ScrollToTop>
       <Helmet>
         <html
           className={`elastic-${
@@ -26,7 +27,7 @@ const ViewSwitcher = ({ location, sizes: { isDesktop, isMobile } }) => {
       </Helmet>
       <YMInitializer accounts={[56016901]} />
       {isMobile ? <MobileView /> : <DesktopView />}
-    </>
+    </ScrollToTop>
   )
 }
 

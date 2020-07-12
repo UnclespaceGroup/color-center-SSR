@@ -1,6 +1,6 @@
 import css from './ContactsMobile.module.scss'
 import ContactsFactory from 'components/Contacts/ContactsFactory'
 
-const Contacts = ContactsFactory(css)
+const ContactsMobile = ContactsFactory(css)
 
-export default Contacts
+export default ContactsMobile

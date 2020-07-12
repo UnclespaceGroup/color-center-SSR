@@ -1,0 +1,87 @@
+.container {
+  width: 70%;
+  margin-top: 12rem;
+}
+
+.bannerWrapper {
+  padding-top: 24rem;
+  padding-bottom: 8rem;
+  background-color: rgba(0,0,0,0.5);
+
+  h1 {
+    color: white;
+    font-size: 5rem;
+    margin-bottom: 2.4rem;
+  }
+
+  p {
+    color: white;
+    font-size: 1.6rem;
+    width: 48rem;
+  }
+}
+
+
+
+.titleH2 {
+  margin-top: 6rem;
+  font-size: 3.6rem;
+  margin-bottom: 3.2rem;
+  font-weight: 500;
+}
+
+.titleH3 {
+  margin-top: 4rem;
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 2.4rem;
+}
+
+.table {
+  border-spacing: 0;
+  width: 100%;
+
+  th {
+    font-size: 1.6rem;
+    color: #828282;
+    text-align: left;
+    font-weight: 400;
+
+    &:nth-child(n + 2) {
+      text-align: right;
+    }
+  }
+
+  td {
+    font-size: 1.6rem;
+    padding: 2rem 0 .5rem;
+    border-bottom: 1px solid #B9B9B9;
+
+    &:nth-child(n + 2) {
+      text-align: right;
+      width: 15%;
+    }
+  }
+}
+
+.advantages {
+  font-size: 1.8rem;
+
+  li {
+    margin-bottom: 2.4rem;
+    padding-left: 2.4rem;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: .6rem;
+      display: inline-block;
+      width: .8rem;
+      height: .8rem;
+      border-radius: 50%;
+      background-color: #9B51E0;
+    }
+  }
+}
