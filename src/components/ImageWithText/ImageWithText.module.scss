@@ -1,4 +1,5 @@
 .container {
+  padding: 4rem 0;
   @include layout;
   display: flex;
   justify-content: space-between;
@@ -21,7 +22,6 @@
 .text {
   font-size: 1.6rem;
   line-height: 2.6rem;
-  font-weight: 300;
 }
 .img {
   width: 50%;

@@ -4,7 +4,6 @@ import cn from 'classnames'
 import { MAIN_PHONE_LINK, MAIN_PHONE_LONG_LINK } from 'constants/USER_DATA'
 import { scrollWindowTo } from 'utils/scrollWindowTo'
 import { ANCHOR_CONTACTS, ANCHOR_FORM, ANCHOR_PRICE, ANCHOR_USING_MDF, ANCHOR_HOW_ORDER } from 'constants/ANCHORS'
-import { MdMenu, MdClose } from 'react-icons/md'
 import Collapse from 'react-collapse'
 
 const Header = () => {
@@ -23,7 +22,6 @@ const Header = () => {
             <a className={css.item} onClick={() => { scrollWindowTo(ANCHOR_HOW_ORDER) }}>Как заказать</a>
             <div className={css.item}><b>г. Сыктывкар</b></div>
             <div className={css.phone}>{MAIN_PHONE_LINK}</div>
-            <div className={css.burger} onClick={() => setOpen(!open)}>{ open ? <MdClose /> : <MdMenu />}</div>
           </div>
         </div>
         <Collapse isOpened={open}>

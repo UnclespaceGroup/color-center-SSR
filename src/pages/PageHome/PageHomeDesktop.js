@@ -21,7 +21,8 @@ const PageHomeDesktop = () => {
       <Header />
       <MainBanner {...mainBanner} />
       <Padding value={120} />
-      <List items={products} itemClassName={css.imageWithContent} >
+      <h2 className={css.title}>{products?.title}</h2>
+      <List items={products?.items} itemClassName={css.imageWithContent} >
         <ImageWithTextDesktop />
       </List>
       <UsingMDF className={css.using} {...usingMdf} id={ANCHOR_USING_MDF} />

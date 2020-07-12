@@ -30,18 +30,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  .phone {
-    margin-top: 0;
-    font-size: 2.4rem;
-
-    &:before {
-      margin-right: .3rem;
-      width: 1.8rem;
-      margin-bottom: -0.3rem;
-      height: 1.8rem;
-    }
-  }
 }
 
 .burger {
@@ -53,6 +41,14 @@
 .wrapper {
   padding: 3rem 2rem;
   background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bottom {
+  margin-top: 8rem;
 }
 
 .item {
@@ -60,14 +56,12 @@
   font-size: 2rem;
   line-height: 2.3rem;
   color: #000000;
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.6rem;
 }
 
 .phone {
-  margin-top: 10rem;
   display: block;
   font-size: 2.4rem;
-  line-height: 4.2rem;
   color: #E30000;
 
   &:before {

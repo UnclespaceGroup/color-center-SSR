@@ -2,8 +2,24 @@
   margin: 6rem auto;
 }
 
+.title {
+  font-size: 2.4rem;
+  @include layoutMobile;
+  margin: 2.4rem auto;
+}
+
+.usingMdf {
+  margin: 6rem auto;
+}
+
 .imageWithContent {
-  margin-bottom: 2.4rem;
+
+  &:nth-child(n + 2):before {
+    content: '';
+    display: block;
+    margin: 4rem 2rem;
+    border-top: solid 1px darkgray;
+  }
 }
 
 .banner {

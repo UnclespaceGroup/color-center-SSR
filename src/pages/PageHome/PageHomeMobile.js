@@ -15,16 +15,24 @@ import List from 'components/List/List'
 import ImageWithTextMobile from 'components/ImageWithText/ImageWithTextMobile'
 
 const PageHomeMobile = () => {
-  const { usingMdf, advantages, guarantee, delivery, mainBanner, products } = usePageHome()
+  const {
+    usingMdf,
+    advantages,
+    guarantee,
+    delivery,
+    mainBanner,
+    products
+  } = usePageHome()
   return (
     <div>
       <Header />
       <MainBannerMobile {...mainBanner} />
       <Padding value={60} />
-      <List items={products} itemClassName={css.imageWithContent} >
+      <h2 className={css.title}>{products?.title}</h2>
+      <List items={products?.items} itemClassName={css.imageWithContent} >
         <ImageWithTextMobile />
       </List>
-      <UsingMDFMobile {...usingMdf} />
+      <UsingMDFMobile className={css.usingMdf} {...usingMdf} />
       <AdvantagesMobile className={css.advantages} {...advantages} />
       <BannerMobile className={css.banner} {...guarantee} />
       <BlockColors />
