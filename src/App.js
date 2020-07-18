@@ -6,7 +6,6 @@ import Helmet from 'react-helmet/lib/Helmet'
 import MobileView from 'App/AppMobile'
 import DesktopView from './App/AppDesktop'
 import { withViewContext } from 'HOC/ViewContext'
-import { YMInitializer } from 'react-yandex-metrika'
 import ReactGA from 'react-ga'
 import { withRouter } from 'react-router'
 import ScrollToTop from 'HOC/ScrollToTop'
@@ -25,7 +24,6 @@ const ViewSwitcher = ({ location, sizes: { isDesktop, isMobile } }) => {
           }`}
         />
       </Helmet>
-      <YMInitializer accounts={[56016901]} />
       {isMobile ? <MobileView /> : <DesktopView />}
     </ScrollToTop>
   )
