@@ -8,18 +8,6 @@
     <meta name="theme-color" content="#000000">
     {{{helmet.base}}}
     {{{helmet.meta}}}
-    {{!
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    !}}
-    <link rel="manifest" href="/manifest.json">
-    <link rel="shortcut icon" href="/favicon.ico">
-
-    <meta property="og:title" content="Крашенные МДФ панели"/>
-    <meta property="og:description" content="Заказ крашенных МДФ фасадов в городе Сыктывкар и республике Коми. МДФ панели любых цветов. Бесплатная доставка."/>
-    <meta property="og:image" content="%PUBLIC_URL%/og-banner.jpg"/>
-    <meta property="og:url" content= "http://mdf-center.ru/" />
-
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript" >
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -35,6 +23,18 @@
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/56016901" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
+
+    {{!
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    !}}
+    <link rel="manifest" href="/manifest.json">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <meta property="og:title" content="Крашенные МДФ панели"/>
+    <meta property="og:description" content="Заказ крашенных МДФ фасадов в городе Сыктывкар и республике Коми. МДФ панели любых цветов. Бесплатная доставка."/>
+    <meta property="og:image" content="%PUBLIC_URL%/og-banner.jpg"/>
+    <meta property="og:url" content= "http://mdf-center.ru/" />
 
     {{{helmet.link}}}
     {{{helmet.script}}}
