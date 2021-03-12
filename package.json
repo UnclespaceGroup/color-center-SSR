@@ -84,7 +84,7 @@
     "react-accessible-accordion": "^2.4.5",
     "react-app-polyfill": "^1.0.1",
     "react-collapse": "^4.0.3",
-    "react-dev-utils": "^7.0.2",
+    "react-dev-utils": "^11.0.4",
     "react-dom": "^16.8.1",
     "react-dropzone": "^10.1.5",
     "react-final-form": "^4.1.0",
